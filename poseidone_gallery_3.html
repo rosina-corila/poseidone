@@ -124,11 +124,11 @@
         <div id="species-subtitle" class="subtitle">Il nome scientifico apparirà qui</div>
 
         <div class="taxobox">
-    <div class="taxo-row"><span class="taxo-label">Nome comune:</span> <span id="taxo-common">–</span></div>
-    <div class="taxo-row"><span class="taxo-label">Nome scientifico:</span> <span id="taxo-sci">–</span></div>
-    <div class="taxo-row"><span class="taxo-label">Classe:</span> –</div>
-    <div class="taxo-row"><span class="taxo-label">Ordine:</span> –</span></div>
-    <div class="taxo-row"><span class="taxo-label">Famiglia:</span> –</span></div>
+            <div class="taxo-row"><span class="taxo-label">Nome comune:</span> <span id="taxo-common">–</span></div>
+            <div class="taxo-row"><span class="taxo-label">Nome scientifico:</span> <span id="taxo-sci">–</span></div>
+            <div class="taxo-row"><span class="taxo-label">Classe:</span> <span id="taxo-class">–</span></div>
+            <div class="taxo-row"><span class="taxo-label">Ordine:</span> <span id="taxo-order">–</span></div>
+            <div class="taxo-row"><span class="taxo-label">Famiglia:</span> <span id="taxo-family">–</span></div>
         </div>
 
 
@@ -160,27 +160,38 @@
         const subtitle = document.getElementById('species-subtitle');
         const taxoSci = document.getElementById('taxo-sci');
         const taxoCommon = document.getElementById('taxo-common');
+        const taxoClass = document.getElementById('taxo-class');
+        const taxoOrder = document.getElementById('taxo-order');
+        const taxoFamily = document.getElementById('taxo-family');
         const description = document.getElementById('species-description');
         const threats = document.getElementById('species-threats');
         const status = document.getElementById('species-status');
        
         /* JSON-ready system */
         let speciesData = {};
+        let jsonLoaded = false;
 
-        fetch("species.json")
-          .then(res => {
-              console.log("FETCH status:", res.status); // DEBUG
-              if (!res.ok) {
-                  console.error("❌ Errore nel caricare species.json");
-                  throw new Error("Impossibile caricare species.json");
-              }
-              return res.json();
-          })
-          .then(json => { 
-              speciesData = json; 
-              console.log("✅ JSON caricato correttamente:", speciesData); // DEBUG
-          })
-          .catch(err => console.error("Errore fetch JSON:", err));
+        // Funzione per caricare il JSON
+        async function loadSpeciesData() {
+            try {
+                const res = await fetch("species.json");
+                console.log("FETCH status:", res.status); // DEBUG
+                if (!res.ok) {
+                    console.error("❌ Errore nel caricare species.json - Status:", res.status);
+                    throw new Error(`Impossibile caricare species.json (Status: ${res.status})`);
+                }
+                const json = await res.json();
+                speciesData = json; 
+                jsonLoaded = true;
+                console.log("✅ JSON caricato correttamente:", Object.keys(speciesData).length, "specie trovate"); // DEBUG
+            } catch (err) {
+                console.error("❌ Errore fetch JSON:", err);
+                console.warn("⚠️ Il file potrebbe non essere accessibile. Assicurati di aprire l'HTML tramite un server HTTP (non file://)");
+            }
+        }
+
+        // Carica i dati all'avvio
+        loadSpeciesData();
 
         images.forEach(img => {
             img.addEventListener('click', () => {
@@ -192,22 +203,30 @@
 
                 // Titoli
                 title.textContent = sciName;
-                subtitle.textContent = "Specie: " + sciName;a
+                subtitle.textContent = "Specie: " + sciName;
 
                 // Recupero dati dal JSON
                 const data = speciesData[sciName];
 
                 console.log("📌 Cliccato:", sciName);       // DEBUG
+                console.log("➡️ JSON caricato:", jsonLoaded); // DEBUG
                 console.log("➡️ Dati trovati:", data);       // DEBUG
+
+                if (!jsonLoaded) {
+                    console.warn("⚠️ JSON non ancora caricato. Attendere qualche istante e riprovare.");
+                }
 
                 if (!data) {
                     console.warn("⚠️ Nessun dato trovato per:", sciName, 
-                                 "\nControlla che la chiave nel JSON sia esattamente uguale.");
+                                 "\nChiavi disponibili nel JSON:", Object.keys(speciesData));
                 }
 
                 // Taxobox
                 taxoSci.textContent = sciName;
                 taxoCommon.textContent = data?.common || "–";
+                taxoClass.textContent = data?.class || "–";
+                taxoOrder.textContent = data?.order || "–";
+                taxoFamily.textContent = data?.family || "–";
 
                 // Testi variabili
                 description.textContent = data?.description || template.description;
