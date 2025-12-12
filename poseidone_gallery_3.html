@@ -163,12 +163,24 @@
         const threats = document.getElementById('species-threats');
         const status = document.getElementById('species-status');
 
-        /* JSON-ready system */
+       
+/* JSON-ready system */
 let speciesData = {};
 
 fetch("species.json")
-  .then(res => res.json())
-  .then(json => { speciesData = json; });
+  .then(res => {
+      console.log("FETCH status:", res.status); // DEBUG
+      if (!res.ok) {
+          console.error("❌ Errore nel caricare species.json");
+          throw new Error("Impossibile caricare species.json");
+      }
+      return res.json();
+  })
+  .then(json => { 
+      speciesData = json; 
+      console.log("✅ JSON caricato correttamente:", speciesData); // DEBUG
+  })
+  .catch(err => console.error("Errore fetch JSON:", err));
 
 images.forEach(img => {
     img.addEventListener('click', () => {
@@ -183,25 +195,33 @@ images.forEach(img => {
         subtitle.textContent = "Specie: " + sciName;
 
         // Recupero dati dal JSON
-        const data = speciesData[sciName] || {};
+        const data = speciesData[sciName];
+
+        console.log("📌 Cliccato:", sciName);       // DEBUG
+        console.log("➡️ Dati trovati:", data);       // DEBUG
+
+        if (!data) {
+            console.warn("⚠️ Nessun dato trovato per:", sciName, 
+                         "\nControlla che la chiave nel JSON sia esattamente uguale.");
+        }
 
         // Taxobox
         taxoSci.textContent = sciName;
-        taxoCommon.textContent = data.common || "–";
+        taxoCommon.textContent = data?.common || "–";
 
         // Testi variabili
-        description.textContent = data.description || template.description;
-        threats.textContent = data.threats || template.threats;
-        status.textContent = data.status || template.status;
+        description.textContent = data?.description || template.description;
+        threats.textContent = data?.threats || template.threats;
+        status.textContent = data?.status || template.status;
 
-        // Rimuove stile placeholder
         description.classList.remove("placeholder");
         threats.classList.remove("placeholder");
         status.classList.remove("placeholder");
     });
 });
+</script>
 
-    </script>
+    
 
 </body>
 </html>
