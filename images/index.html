@@ -1,0 +1,180 @@
+<!-- inde.html -->
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galleria — Pagina esempio</title>
+
+  <!-- Meta per SEO/social (personalizza) -->
+  <meta name="description" content="Esempio di galleria immagini responsive" />
+
+  <!-- Stili rapidi incorporati -->
+  <style>
+    :root{
+      --bg:#f8f9fa;
+      --card:#ffffff;
+      --accent:#0b66ff;
+      --text:#111;
+      --gap:12px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.4;
+      padding:24px;
+    }
+
+    header {max-width:1200px;margin:0 auto 20px;}
+    h1{margin:0 0 6px;font-size:1.5rem;}
+    p.lead{margin:0;color:#555}
+
+    /* Galleria grid */
+    .gallery{
+      max-width:1200px;
+      margin:20px auto;
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap:var(--gap);
+    }
+    .card{
+      background:var(--card);
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+      display:flex;
+      flex-direction:column;
+    }
+    .card img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+      display:block;
+      cursor:pointer;
+      transition:transform .25s ease;
+    }
+    .card img:hover{ transform:scale(1.03); }
+
+    .card .meta{
+      padding:10px;
+      font-size:0.9rem;
+      color:#444;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .card .meta .title{font-weight:600}
+
+    /* Lightbox modal */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      display:none;
+      justify-content:center;
+      align-items:center;
+      background:rgba(0,0,0,0.65);
+      z-index:1000;
+      padding:20px;
+    }
+    .lightbox.open{ display:flex; }
+    .lightbox img{
+      max-width:calc(100% - 40px);
+      max-height:calc(100% - 80px);
+      border-radius:8px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+    .lightbox .close{
+      position:absolute;
+      top:18px;
+      right:18px;
+      background:transparent;
+      border:0;
+      color:#fff;
+      font-size:26px;
+      cursor:pointer;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width:420px){
+      .card img{ height:120px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Galleria immagini</h1>
+    <p class="lead">Esempio di layout responsive. Clicca su un'immagine per aprirla a tutto schermo.</p>
+  </header>
+
+  <main>
+    <section class="gallery" aria-label="Galleria immagini">
+      <!-- Esempi: sostituisci con i tuoi file in /images -->
+      <article class="card">
+        <img src="images/photo1.jpg" alt="Descrizione immagine 1" data-full="images/photo1.jpg" />
+        <div class="meta">
+          <span class="title">Titolo 1</span>
+          <small>foto • 2025</small>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/photo2.jpg" alt="Descrizione immagine 2" data-full="images/photo2.jpg" />
+        <div class="meta">
+          <span class="title">Titolo 2</span>
+          <small>foto • 2025</small>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/photo3.jpg" alt="Descrizione immagine 3" data-full="images/photo3.jpg" />
+        <div class="meta">
+          <span class="title">Titolo 3</span>
+          <small>foto • 2025</small>
+        </div>
+      </article>
+
+      <!-- Aggiungi altre card copiando il blocco sopra -->
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Visualizzatore immagine">
+    <button class="close" aria-label="Chiudi" id="lb-close">&times;</button>
+    <img id="lb-img" src="" alt="" />
+  </div>
+
+  <!-- Script minimo per lightbox e accessibilità -->
+  <script>
+    (function(){
+      const gallery = document.querySelector('.gallery');
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lb-img');
+      const lbClose = document.getElementById('lb-close');
+
+      // Apri lightbox quando si clicca su un'immagine
+      gallery.addEventListener('click', (ev) => {
+        const img = ev.target.closest('img');
+        if(!img) return;
+        const full = img.dataset.full || img.src;
+        lbImg.src = full;
+        lbImg.alt = img.alt || '';
+        lightbox.classList.add('open');
+        lbClose.focus();
+      });
+
+      // Chiudi click sullo sfondo o sul bottone
+      lightbox.addEventListener('click', (ev) => {
+        if(ev.target === lightbox || ev.target === lbClose) closeLB();
+      });
+
+      // Chiudi con ESC
+      window.addEventListener('keydown', (ev) => {
+        if(ev.key === 'Escape' && lightbox.classList.contains('open')) closeLB();
+      });
+
+      function closeLB(){
+        lig
