@@ -164,30 +164,43 @@
         const status = document.getElementById('species-status');
 
         /* JSON-ready system */
-        const speciesData = {};
+let speciesData = {};
 
-        images.forEach(img => {
-            img.addEventListener('click', () => {
-                const sciName = img.dataset.name;
+fetch("species.json")
+  .then(res => res.json())
+  .then(json => { speciesData = json; });
 
-                bigPhoto.src = img.src;
-                bigPhoto.alt = sciName;
+images.forEach(img => {
+    img.addEventListener('click', () => {
+        const sciName = img.dataset.name;
 
-                title.textContent = sciName;
-                subtitle.textContent = "Specie: " + sciName;
+        // Foto grande
+        bigPhoto.src = img.src;
+        bigPhoto.alt = sciName;
 
-                taxoSci.textContent = sciName;
-                taxoCommon.textContent = "Nome comune disponibile in futuro";
+        // Titoli
+        title.textContent = sciName;
+        subtitle.textContent = "Specie: " + sciName;
 
-                description.textContent = template.description;
-                threats.textContent = template.threats;
-                status.textContent = template.status;
+        // Recupero dati dal JSON
+        const data = speciesData[sciName] || {};
 
-                description.classList.remove("placeholder");
-                threats.classList.remove("placeholder");
-                status.classList.remove("placeholder");
-            });
-        });
+        // Taxobox
+        taxoSci.textContent = sciName;
+        taxoCommon.textContent = data.common || "–";
+
+        // Testi variabili
+        description.textContent = data.description || template.description;
+        threats.textContent = data.threats || template.threats;
+        status.textContent = data.status || template.status;
+
+        // Rimuove stile placeholder
+        description.classList.remove("placeholder");
+        threats.classList.remove("placeholder");
+        status.classList.remove("placeholder");
+    });
+});
+
     </script>
 
 </body>
