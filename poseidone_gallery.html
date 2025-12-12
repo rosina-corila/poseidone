@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Poseidone – Galleria immagini</title>
+
+  <style>
+    :root{
+      --bg:#f2f4f7;
+      --card:#ffffff;
+      --text:#222;
+      --gap:14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.4;
+      padding:24px;
+    }
+    header{
+      max-width:1200px;
+      margin:0 auto 24px;
+      text-align:center;
+    }
+    h1{margin:0 0 6px;font-size:1.8rem;}
+
+    /* Griglia */
+    .gallery{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap:var(--gap);
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+      transition:transform .15s ease;
+      cursor:pointer;
+    }
+    .card:hover{
+      transform:translateY(-3px);
+    }
+
+    .card img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .meta{
+      padding:12px;
+    }
+    .title{
+      font-size:1rem;
+      font-weight:600;
+      margin:0 0 4px;
+    }
+    .subtitle{
+      font-size:0.85rem;
+      color:#666;
+    }
+
+    /* Lightbox */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      display:none;
+      justify-content:center;
+      align-items:center;
+      background:rgba(0,0,0,0.75);
+      z-index:1000;
+      padding:20px;
+    }
+    .lightbox.open{ display:flex; }
+    .lightbox img{
+      max-width:100%;
+      max-height:90%;
+      border-radius:8px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+    .close{
+      position:absolute;
+      top:18px;
+      right:18px;
+      background:transparent;
+      border:0;
+      color:#fff;
+      font-size:40px;
+      font-weight:300;
+      cursor:pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Galleria Animali — Progetto Poseidone</h1>
+  <p>Immagini provenienti dalla cartella <code>images/</code></p>
+</header>
+
+<main>
+  <section class="gallery">
+
+    <!-- Card generate manualmente dai tuoi file -->
+    
+    <article class="card" data-full="images/Caretta_caretta_.jpg">
+      <img src="images/Caretta_caretta_.jpg" alt="Caretta caretta" />
+      <div class="meta">
+        <p class="title">Tartaruga Caretta – <i>Caretta caretta</i></p>
+        <p class="subtitle">Specie marina</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Tursiops_truncatus.jpg">
+      <img src="images/Tursiops_truncatus.jpg" alt="Tursiops truncatus" />
+      <div class="meta">
+        <p class="title">Delfino Tursiope – <i>Tursiops truncatus</i></p>
+        <p class="subtitle">Cetaceo</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Sternula_albifrons.jpg">
+      <img src="images/Sternula_albifrons.jpg" alt="Sternula albifrons" />
+      <div class="meta">
+        <p class="title">Fraticello – <i>Sternula albifrons</i></p>
+        <p class="subtitle">Uccello costiero</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Cladocora_caespitosa.jpg">
+      <img src="images/Cladocora_caespitosa.jpg" alt="Cladocora caespitosa" />
+      <div class="meta">
+        <p class="title">Corallo mediterraneo – <i>Cladocora caespitosa</i></p>
+        <p class="subtitle">Corallo</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Thalasseus_sandvicensis.jpg">
+      <img src="images/Thalasseus_sandvicensis.jpg" alt="Thalasseus sandvicensis" />
+      <div class="meta">
+        <p class="title">Beccaccia di mare – <i>Thalasseus sandvicensis</i></p>
+        <p class="subtitle">Uccello marino</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Charadrius_alexandrinus.jpg">
+      <img src="images/Charadrius_alexandrinus.jpg" alt="Charadrius alexandrinus" />
+      <div class="meta">
+        <p class="title">Fratino – <i>Charadrius alexandrinus</i></p>
+        <p class="subtitle">Uccello costiero</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Gulosus_aristotelis.jpg">
+      <img src="images/Gulosus_aristotelis.jpg" alt="Gulosus aristotelis" />
+      <div class="meta">
+        <p class="title">Marangone dal ciuffo – <i>Gulosus aristotelis</i></p>
+        <p class="subtitle">Uccello marino</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Pinna_nobilis.jpeg">
+      <img src="images/Pinna_nobilis.jpeg" alt="Pinna nobilis" />
+      <div class="meta">
+        <p class="title">Nacchera di mare – <i>Pinna nobilis</i></p>
+        <p class="subtitle">Mollusco</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Lanius_collurio.jpg">
+      <img src="images/Lanius_collurio.jpg" alt="Lanius collurio" />
+      <div class="meta">
+        <p class="title">Averla piccola – <i>Lanius collurio</i></p>
+        <p class="subtitle">Uccello</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Canis_aureus_syriacus.jpg">
+      <img src="images/Canis_aureus_syriacus.jpg" alt="Canis aureus syriacus" />
+      <div class="meta">
+        <p class="title">Sciacallo dorato – <i>Canis aureus syriacus</i></p>
+        <p class="subtitle">Mammifero</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Caprimulgus_europaeus.jpg">
+      <img src="images/Caprimulgus_europaeus.jpg" alt="Caprimulgus europaeus" />
+      <div class="meta">
+        <p class="title">Succiacapre – <i>Caprimulgus europaeus</i></p>
+        <p class="subtitle">Uccello</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Dryocopus_martius.jpg">
+      <img src="images/Dryocopus_martius.jpg" alt="Dryocopus martius" />
+      <div class="meta">
+        <p class="title">Picchio nero – <i>Dryocopus martius</i></p>
+        <p class="subtitle">Uccello</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Sterna_hirundo.jpg">
+      <img src="images/Sterna_hirundo.jpg" alt="Sterna hirundo" />
+      <div class="meta">
+        <p class="title">Sterna comune – <i>Sterna hirundo</i></p>
+        <p class="subtitle">Uccello marino</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Somateria_mollissima.jpg">
+      <img src="images/Somateria_mollissima.jpg" alt="Somateria mollissima" />
+      <div class="meta">
+        <p class="title">Edredone – <i>Somateria mollissima</i></p>
+        <p class="subtitle">Uccello</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Ichthyaetus_melanocephalus.jpg">
+      <img src="images/Ichthyaetus_melanocephalus.jpg" alt="Ichthyaetus melanocephalus" />
+      <div class="meta">
+        <p class="title">Gabbiano corallino – <i>Ichthyaetus melanocephalus</i></p>
+        <p class="subtitle">Uccello</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Himantopus_himantopus.jpg">
+      <img src="images/Himantopus_himantopus.jpg" alt="Himantopus himantopus" />
+      <div class="meta">
+        <p class="title">Cavaliere d’Italia – <i>Himantopus himantopus</i></p>
+        <p class="subtitle">Uccello</p>
+      </div>
+    </article>
+
+    <article class="card" data-full="images/Calidris-alpina.jpg">
+      <img src="images/Calidris-alpina.jpg" alt="Calidris alpina" />
+      <div class="meta">
+        <p class="title">Piovanello – <i>Calidris alpina</i></p>
+        <p class="subtitle">Uccello costiero</p>
+      </div>
+    </article>
+
+  </section>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" role="dialog">
+  <button class="close" aria-label="Chiudi">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.querySelector('.close');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      lightboxImg.src = card.dataset.full;
+      lightbox.classList.add('open');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('open');
+    lightboxImg.src = "";
+  });
+
+  lightbox.addEventListener('click', (ev) => {
+    if (ev.target === lightbox) {
+      lightbox.classList.remove('open');
+      lightboxImg.src = "";
+    }
+  });
+
+  window.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape') {
+      lightbox.classList.remove('open');
+      lightboxImg.src = "";
+    }
+  });
+</script>
+
+</body>
+</html>
