@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popeidone – Galleria verticale</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Colonna sinistra: galleria verticale */
+        .left-panel {
+            width: 50%;
+            overflow-y: scroll;
+            background: #f7f7f7;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .left-panel img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .left-panel img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Colonna destra: contenuti */
+        .right-panel {
+            width: 50%;
+            padding: 30px;
+            background: white;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .right-panel h1 {
+            margin-top: 0;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .description {
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .credits {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- PANEL SINISTRO: SCROLL GALLERY -->
+    <div class="left-panel">
+
+        <!-- Inserisco tutte le immagini -->
+        <img src="images/Caretta_caretta.jpg" data-name="Caretta caretta" alt="">
+        <img src="images/Tursiops_truncatus.jpg" data-name="Tursiops truncatus" alt="">
+        <img src="images/Sternula_albifrons.jpg" data-name="Sternula albifrons" alt="">
+        <img src="images/Cladocora_caespitosa.jpg" data-name="Cladocora caespitosa" alt="">
+        <img src="images/Thalasseus_sandvicensis.jpg" data-name="Thalasseus sandvicensis" alt="">
+        <img src="images/Charadrius_alexandrinus.jpg" data-name="Charadrius alexandrinus" alt="">
+        <img src="images/Gulosus_aristotelis.jpg" data-name="Gulosus aristotelis" alt="">
+        <img src="images/Pinna_nobilis.jpeg" data-name="Pinna nobilis" alt="">
+        <img src="images/Lanius_collurio.jpg" data-name="Lanius collurio" alt="">
+        <img src="images/Canis_aureus_syriacus.jpg" data-name="Canis aureus syriacus" alt="">
+        <img src="images/Caprimulgus_europaeus.jpg" data-name="Caprimulgus europaeus" alt="">
+        <img src="images/Dryocopus_martius.jpg" data-name="Dryocopus martius" alt="">
+        <img src="images/Sterna_hirundo.jpg" data-name="Sterna hirundo" alt="">
+        <img src="images/Somateria_mollissima.jpg" data-name="Somateria mollissima" alt="">
+        <img src="images/Ichthyaetus_melanocephalus.jpg" data-name="Ichthyaetus melanocephalus" alt="">
+        <img src="images/Himantopus_himantopus.jpg" data-name="Himantopus himantopus" alt="">
+        <img src="images/Calidris-alpina.jpg" data-name="Calidris alpina" alt="">
+
+    </div>
+
+    <!-- PANEL DESTRO: DESCRIZIONE -->
+    <div class="right-panel">
+        <h1 id="species-title">Seleziona un'immagine</h1>
+        <div id="species-subtitle" class="subtitle">Il nome della specie apparirà qui</div>
+
+        <div class="description" id="species-description">
+            Clicca su una delle immagini sulla sinistra per vedere informazioni e dettagli descrittivi.
+        </div>
+
+        <div class="credits">
+            Foto archivio progetto Poseidone – Galleria automatica generata
+        </div>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.left-panel img');
+        const title = document.getElementById('species-title');
+        const subtitle = document.getElementById('species-subtitle');
+        const description = document.getElementById('species-description');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                const name = img.dataset.name;
+                title.textContent = name;
+                subtitle.textContent = "Specie: " + name;
+
+                description.textContent =
+                    name + 
+                    " è una delle specie incluse nel progetto Poseidone. Questa scheda è generata automaticamente a partire dal nome del file e potrà essere integrata con contenuti aggiuntivi, testi scientifici, foto alternative, o dati provenienti da monitoraggi.";
+            });
+        });
+    </script>
+
+</body>
+</html>
