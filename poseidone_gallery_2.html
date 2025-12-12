@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popeidone – Galleria verticale</title>
+    <title>Poseidone – Schede specie</title>
 
     <style>
         body {
@@ -12,15 +12,17 @@
             display: flex;
             height: 100vh;
             overflow: hidden;
+            background: #f5f5f5;
         }
 
-        /* Colonna sinistra: galleria verticale */
+        /* COLONNA SINISTRA */
         .left-panel {
             width: 50%;
             overflow-y: scroll;
-            background: #f7f7f7;
+            background: #ededed;
             padding: 20px;
             box-sizing: border-box;
+            border-right: 2px solid #ccc;
         }
         .left-panel img {
             width: 100%;
@@ -33,42 +35,57 @@
             transform: scale(1.02);
         }
 
-        /* Colonna destra: contenuti */
+        /* COLONNA DESTRA */
         .right-panel {
             width: 50%;
             padding: 30px;
-            background: white;
-            box-sizing: border-box;
             overflow-y: auto;
+            box-sizing: border-box;
+            background: white;
         }
-        .right-panel h1 {
+
+        h1 {
             margin-top: 0;
         }
         .subtitle {
-            font-size: 1.1rem;
-            color: #666;
+            font-size: 1.15rem;
+            font-style: italic;
             margin-bottom: 20px;
+            color: #444;
         }
-        .description {
-            line-height: 1.6;
-            font-size: 1rem;
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+            color: #222;
+        }
+        .text {
+            line-height: 1.65;
+            color: #333;
+        }
+
+        .placeholder {
+            color: #777;
         }
 
         .credits {
-            margin-top: 30px;
+            margin-top: 40px;
             font-size: 0.9rem;
             color: #888;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
         }
     </style>
 
 </head>
 <body>
 
-    <!-- PANEL SINISTRO: SCROLL GALLERY -->
+    <!-- COLONNA SINISTRA -->
     <div class="left-panel">
 
-        <!-- Inserisco tutte le immagini -->
-        <img src="images/Caretta_caretta.jpg" data-name="Caretta caretta" alt="">
+        <img src="images/Caretta_caretta_.jpg" data-name="Caretta caretta" alt="">
         <img src="images/Tursiops_truncatus.jpg" data-name="Tursiops truncatus" alt="">
         <img src="images/Sternula_albifrons.jpg" data-name="Sternula albifrons" alt="">
         <img src="images/Cladocora_caespitosa.jpg" data-name="Cladocora caespitosa" alt="">
@@ -88,35 +105,71 @@
 
     </div>
 
-    <!-- PANEL DESTRO: DESCRIZIONE -->
+    <!-- COLONNA DESTRA -->
     <div class="right-panel">
-        <h1 id="species-title">Seleziona un'immagine</h1>
-        <div id="species-subtitle" class="subtitle">Il nome della specie apparirà qui</div>
 
-        <div class="description" id="species-description">
-            Clicca su una delle immagini sulla sinistra per vedere informazioni e dettagli descrittivi.
+        <h1 id="species-title">Seleziona una specie</h1>
+        <div id="species-subtitle" class="subtitle">Il nome scientifico apparirà qui</div>
+
+        <div class="section-title">Descrizione della specie</div>
+        <div id="species-description" class="text placeholder">
+            Clicca su un'immagine nella colonna sinistra per caricare automaticamente la scheda completa.
+        </div>
+
+        <div class="section-title">Minacce</div>
+        <div id="species-threats" class="text placeholder">
+            –
+        </div>
+
+        <div class="section-title">Stato di conservazione</div>
+        <div id="species-status" class="text placeholder">
+            –
         </div>
 
         <div class="credits">
-            Foto archivio progetto Poseidone – Galleria automatica generata
+            Schede generate automaticamente – Progetto Poseidone
         </div>
+
     </div>
 
     <script>
+        /* Template basato sulla scheda di Somateria mollissima */
+        const template = {
+            description: 
+            `È una specie inclusa nel progetto Poseidone. Questo testo descrittivo è un modello uniforme basato sulla scheda dell’edredone:
+            
+L'edredone (Somateria mollissima) è una specie di anatra marina a distribuzione circumpolare, nidificante anche in Italia. Il maschio presenta piumaggio bianco e nero con capo bruno-verde; la femmina è bruno scuro ed è riconoscibile per la grande taglia e la sagoma caratteristica. Gli individui formano colonie costiere numerose, alternando riposo e alimentazione. Si nutrono immergendosi e prediligono molluschi come le cozze.`,
+
+            threats:
+            `Disturbo antropico (barche, canoisti, diportisti) e presenza di predatori terrestri nei siti di nidificazione, che possono causare abbandono dei nidi. Anche la modernizzazione degli impianti di mitilicoltura può ridurre la disponibilità di aree idonee alla sosta.`,
+
+            status:
+            `Specie indicatrice della Strategia Marina. Classificata come "quasi minacciata" a livello globale (IUCN). Le popolazioni locali mostrano stabilità con lieve tendenza al declino e contrazione dell’areale in più unità 10×10 km.`,
+        };
+
         const images = document.querySelectorAll('.left-panel img');
+
         const title = document.getElementById('species-title');
         const subtitle = document.getElementById('species-subtitle');
         const description = document.getElementById('species-description');
+        const threats = document.getElementById('species-threats');
+        const status = document.getElementById('species-status');
 
         images.forEach(img => {
             img.addEventListener('click', () => {
-                const name = img.dataset.name;
-                title.textContent = name;
-                subtitle.textContent = "Specie: " + name;
+                const sciName = img.dataset.name;
 
-                description.textContent =
-                    name + 
-                    " è una delle specie incluse nel progetto Poseidone. Questa scheda è generata automaticamente a partire dal nome del file e potrà essere integrata con contenuti aggiuntivi, testi scientifici, foto alternative, o dati provenienti da monitoraggi.";
+                title.textContent = sciName;
+                subtitle.textContent = "Specie: " + sciName;
+
+                // Template uniforme per tutte le specie
+                description.textContent = template.description.replace(/\(Somateria mollissima\)/g, `(${sciName})`);
+                threats.textContent = template.threats;
+                status.textContent = template.status;
+
+                description.classList.remove("placeholder");
+                threats.classList.remove("placeholder");
+                status.classList.remove("placeholder");
             });
         });
     </script>
