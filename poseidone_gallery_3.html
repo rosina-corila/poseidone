@@ -26,8 +26,9 @@
             border-right: 2px solid #ccc;
             display: grid; 
             grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: minmax(200px, auto); /* Altezza minima per le righe */
             gap: 12px;
-            align-content: start; /* Importante per evitare stretch verticale */
+            align-content: start;
         }
 
         .left-panel-item {
