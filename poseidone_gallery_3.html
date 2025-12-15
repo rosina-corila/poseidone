@@ -10,18 +10,22 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background: #f5f5f5;
+            display: flex;       /* due colonne affiancate */
+            height: 100vh;       /* pagina a tutta altezza */
+            overflow: hidden;    /* lo scroll avviene dentro le colonne */
         }
 
-        /* COLONNA SINISTRA – GALLERIA TIPO MASONRY VERTICALE */
+        /* COLONNA SINISTRA – GALLERIA TIPO MASONRY ENTRO LA COLONNA */
         .left-panel {
-            width: 100%;
+            width: 50%;
+            height: 100vh;
             overflow-y: auto;
             overflow-x: hidden;
             background: #ededed;
             padding: 20px;
             box-sizing: border-box;
-            border-bottom: 2px solid #ccc;
-            column-count: 3;
+            border-right: 2px solid #ccc;
+            column-count: 2;     /* masonry a 2 colonne dentro la colonna sinistra */
             column-gap: 8px;
         }
         .left-panel-item {
@@ -66,12 +70,12 @@
 
         /* COLONNA DESTRA */
         .right-panel {
-            width: 100%;
+            width: 50%;
+            height: 100vh;
             padding: 30px;
             overflow-y: auto;
             box-sizing: border-box;
             background: white;
-            border-top: 2px solid #ccc;
         }
 
         #big-photo {
