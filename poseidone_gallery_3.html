@@ -17,37 +17,37 @@
 
         /* COLONNA SINISTRA – GALLERIA TIPO MASONRY ENTRO LA COLONNA */
 
-      .left-panel {
-            width: 50%;
-            height: 100vh;
-            overflow-y: auto;
-            overflow-x: hidden;
-            background: #ededed;
-            padding: 20px;
-            box-sizing: border-box;
-            border-right: 2px solid #ccc;
+        .left-panel {
+    width: 50%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #ededed;
+    padding: 20px;
+    box-sizing: border-box;
+    border-right: 2px solid #ccc;
 
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
-        }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    align-items: start;
+}
 
-        .left-panel-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            margin-bottom: 8px;
-            border: 1px solid #fff; /* sottile bordo bianco tra le immagini */
-            background: #fff;
-        }
-        .left-panel img {
-            width: 100%;
-            height: auto;           /* altezze naturali per effetto masonry */
-            object-fit: cover;
-            display: block;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
+.left-panel-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #fff;
+    align-self: start;
+}
+
+.left-panel img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
         .left-panel img:hover {
             transform: scale(1.02);
         }
