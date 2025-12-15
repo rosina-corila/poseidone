@@ -18,16 +18,24 @@
         /* COLONNA SINISTRA */
         .left-panel {
             width: 50%;
-            overflow-y: scroll;
+            /* Da colonna verticale a strip orizzontale */
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 12px;
+            overflow-x: auto;
+            overflow-y: hidden;
             background: #ededed;
             padding: 20px;
             box-sizing: border-box;
             border-right: 2px solid #ccc;
+            scroll-behavior: smooth;
         }
         .left-panel img {
-            width: 100%;
+            flex: 0 0 auto;          /* Mantieni larghezza fissa per lo slideshow orizzontale */
+            height: 140px;           /* Altezza uniforme delle anteprime */
+            width: auto;             /* Larghezza proporzionale */
             border-radius: 10px;
-            margin-bottom: 20px;
             cursor: pointer;
             transition: 0.2s;
         }
