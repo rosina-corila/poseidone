@@ -15,29 +15,48 @@
             background: #f5f5f5;
         }
 
-        /* COLONNA SINISTRA */
+        /* COLONNA SINISTRA – GALLERIA A MOSAICO */
         .left-panel {
             width: 100%;
-            /* Da colonna verticale a strip orizzontale */
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
             gap: 12px;
-            overflow-x: auto;
-            overflow-y: hidden;
+            overflow-y: auto;
+            overflow-x: hidden;
             background: #ededed;
             padding: 20px;
             box-sizing: border-box;
             border-right: 2px solid #ccc;
-            scroll-behavior: smooth;
+        }
+        .left-panel-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
         }
         .left-panel img {
-            flex: 0 0 auto;          /* Mantieni larghezza fissa per lo slideshow orizzontale */
-            height: 140px;           /* Altezza uniforme delle anteprime */
-            width: auto;             /* Larghezza proporzionale */
-            border-radius: 10px;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
             cursor: pointer;
             transition: 0.2s;
+        }
+        .left-panel img:hover {
+            transform: scale(1.02);
+        }
+        .left-panel-caption {
+            position: absolute;
+            left: 8px;
+            bottom: 8px;
+            padding: 4px 8px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            max-width: 90%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
         .left-panel img:hover {
             transform: scale(1.02);
@@ -133,23 +152,74 @@
 
     <!-- COLONNA SINISTRA -->
     <div class="left-panel">
-        <img src="images/Caretta_caretta_.jpg" data-name="Caretta caretta" alt="Caretta caretta">
-        <img src="images/Tursiops_truncatus.jpg" data-name="Tursiops truncatus" alt="Tursiops truncatus">
-        <img src="images/Sternula_albifrons.jpg" data-name="Sternula albifrons" alt="Sternula albifrons">
-        <img src="images/Cladocora_caespitosa.jpg" data-name="Cladocora caespitosa" alt="Cladocora caespitosa">
-        <img src="images/Thalasseus_sandvicensis.jpg" data-name="Thalasseus sandvicensis" alt="Thalasseus sandvicensis">
-        <img src="images/Charadrius_alexandrinus.jpg" data-name="Charadrius alexandrinus" alt="Charadrius alexandrinus">
-        <img src="images/Gulosus_aristotelis.jpg" data-name="Gulosus aristotelis" alt="Gulosus aristotelis">
-        <img src="images/Pinna_nobilis.jpeg" data-name="Pinna nobilis" alt="Pinna nobilis">
-        <img src="images/Lanius_collurio.jpg" data-name="Lanius collurio" alt="Lanius collurio">
-        <img src="images/Canis_aureus_syriacus.jpg" data-name="Canis aureus syriacus" alt="Canis aureus syriacus">
-        <img src="images/Caprimulgus_europaeus.jpg" data-name="Caprimulgus europaeus" alt="Caprimulgus europaeus">
-        <img src="images/Dryocopus_martius.jpg" data-name="Dryocopus martius" alt="Dryocopus martius">
-        <img src="images/Sterna_hirundo.jpg" data-name="Sterna hirundo" alt="Sterna hirundo">
-        <img src="images/Somateria_mollissima.jpg" data-name="Somateria mollissima" alt="Somateria mollissima">
-        <img src="images/Ichthyaetus_melanocephalus.jpg" data-name="Ichthyaetus melanocephalus" alt="Ichthyaetus melanocephalus">
-        <img src="images/Himantopus_himantopus.jpg" data-name="Himantopus himantopus" alt="Himantopus himantopus">
-        <img src="images/Calidris-alpina.jpg" data-name="Calidris alpina" alt="Calidris alpina">
+        <div class="left-panel-item">
+            <img src="images/Caretta_caretta_.jpg" data-name="Caretta caretta" alt="Caretta caretta">
+            <div class="left-panel-caption">Caretta caretta</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Tursiops_truncatus.jpg" data-name="Tursiops truncatus" alt="Tursiops truncatus">
+            <div class="left-panel-caption">Tursiops truncatus</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Sternula_albifrons.jpg" data-name="Sternula albifrons" alt="Sternula albifrons">
+            <div class="left-panel-caption">Sternula albifrons</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Cladocora_caespitosa.jpg" data-name="Cladocora caespitosa" alt="Cladocora caespitosa">
+            <div class="left-panel-caption">Cladocora caespitosa</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Thalasseus_sandvicensis.jpg" data-name="Thalasseus sandvicensis" alt="Thalasseus sandvicensis">
+            <div class="left-panel-caption">Thalasseus sandvicensis</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Charadrius_alexandrinus.jpg" data-name="Charadrius alexandrinus" alt="Charadrius alexandrinus">
+            <div class="left-panel-caption">Charadrius alexandrinus</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Gulosus_aristotelis.jpg" data-name="Gulosus aristotelis" alt="Gulosus aristotelis">
+            <div class="left-panel-caption">Gulosus aristotelis</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Pinna_nobilis.jpeg" data-name="Pinna nobilis" alt="Pinna nobilis">
+            <div class="left-panel-caption">Pinna nobilis</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Lanius_collurio.jpg" data-name="Lanius collurio" alt="Lanius collurio">
+            <div class="left-panel-caption">Lanius collurio</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Canis_aureus_syriacus.jpg" data-name="Canis aureus syriacus" alt="Canis aureus syriacus">
+            <div class="left-panel-caption">Canis aureus syriacus</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Caprimulgus_europaeus.jpg" data-name="Caprimulgus europaeus" alt="Caprimulgus europaeus">
+            <div class="left-panel-caption">Caprimulgus europaeus</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Dryocopus_martius.jpg" data-name="Dryocopus martius" alt="Dryocopus martius">
+            <div class="left-panel-caption">Dryocopus martius</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Sterna_hirundo.jpg" data-name="Sterna hirundo" alt="Sterna hirundo">
+            <div class="left-panel-caption">Sterna hirundo</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Somateria_mollissima.jpg" data-name="Somateria mollissima" alt="Somateria mollissima">
+            <div class="left-panel-caption">Somateria mollissima</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Ichthyaetus_melanocephalus.jpg" data-name="Ichthyaetus melanocephalus" alt="Ichthyaetus melanocephalus">
+            <div class="left-panel-caption">Ichthyaetus melanocephalus</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Himantopus_himantopus.jpg" data-name="Himantopus himantopus" alt="Himantopus himantopus">
+            <div class="left-panel-caption">Himantopus himantopus</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Calidris-alpina.jpg" data-name="Calidris alpina" alt="Calidris alpina">
+            <div class="left-panel-caption">Calidris alpina</div>
+        </div>
     </div>
 
     <!-- COLONNA DESTRA -->
