@@ -267,128 +267,106 @@
         <div class="credits">Schede generate automaticamente – Progetto Poseidone</div>
     </div>
     
-    <script>
-        const template = {
-            description: `Testo descrittivo uniforme per tutte le specie.`,
-            threats: `Minacce standard.`,
-            status: `Stato di conservazione standard.`
-        };
+   <script>
+const template = {
+    description: "Testo descrittivo uniforme per tutte le specie.",
+    threats: "Minacce standard.",
+    status: "Stato di conservazione standard."
+};
 
-        const images = document.querySelectorAll('.left-panel img');
+const images = document.querySelectorAll('.left-panel img');
 
-        const bigPhoto = document.getElementById('big-photo');
-        const title = document.getElementById('species-title');
-        const subtitle = document.getElementById('species-subtitle');
-        const taxoSci = document.getElementById('taxo-sci');
-        const taxoCommon = document.getElementById('taxo-common');
-        const taxoClass = document.getElementById('taxo-class');
-        const taxoOrder = document.getElementById('taxo-order');
-        const taxoFamily = document.getElementById('taxo-family');
-        const description = document.getElementById('species-description');
-        const threats = document.getElementById('species-threats');
-        const status = document.getElementById('species-status');
-        const additionalImage1 = document.getElementById('additional-image-1');
-        const additionalImage2 = document.getElementById('additional-image-2');
-        const mapEmbed = document.getElementById('map-embed');
-        const mapPlaceholder = document.getElementById('map-placeholder');
-        
-        /* JSON-ready system */
-        let speciesData = {};
-        let jsonLoaded = false;
+const bigPhoto = document.getElementById('big-photo');
+const title = document.getElementById('species-title');
+const subtitle = document.getElementById('species-subtitle');
+const taxoSci = document.getElementById('taxo-sci');
+const taxoCommon = document.getElementById('taxo-common');
+const taxoClass = document.getElementById('taxo-class');
+const taxoOrder = document.getElementById('taxo-order');
+const taxoFamily = document.getElementById('taxo-family');
+const description = document.getElementById('species-description');
+const threats = document.getElementById('species-threats');
+const status = document.getElementById('species-status');
+const additionalImage1 = document.getElementById('additional-image-1');
+const additionalImage2 = document.getElementById('additional-image-2');
+const mapEmbed = document.getElementById('map-embed');
+const mapPlaceholder = document.getElementById('map-placeholder');
 
-        // Funzione per caricare il JSON
-        async function loadSpeciesData() {
-            try {
-                const res = await fetch("species.json");
-                console.log("FETCH status:", res.status);
-                if (!res.ok) {
-                    console.error("❌ Errore nel caricare species.json - Status:", res.status);
-                    throw new Error(`Impossibile caricare species.json (Status: ${res.status})`);
-                }
-                const json = await res.json();
-                speciesData = json; 
-                jsonLoaded = true;
-                console.log("✅ JSON caricato correttamente:", Object.keys(speciesData).length, "specie trovate");
-            } catch (err) {
-                console.error("❌ Errore fetch JSON:", err);
-                console.warn("⚠️ Il file potrebbe non essere accessibile. Assicurati di aprire l'HTML tramite un server HTTP (non file://)");
-            }
+let speciesData = {};
+let jsonLoaded = false;
+
+async function loadSpeciesData() {
+    try {
+        const res = await fetch("./species.json");
+        if (!res.ok) throw new Error(res.status);
+        speciesData = await res.json();
+        jsonLoaded = true;
+        console.log("✅ JSON caricato:", Object.keys(speciesData).length);
+    } catch (err) {
+        console.error("❌ Errore caricamento JSON:", err);
+    }
+}
+
+loadSpeciesData();
+
+images.forEach(img => {
+    img.addEventListener('click', () => {
+
+        if (!jsonLoaded) {
+            alert("Dati in caricamento, riprova tra un istante.");
+            return;
         }
 
-        // Carica i dati all'avvio
-        loadSpeciesData();
+        const sciName = img.dataset.name;
+        const data = speciesData[sciName];
 
-        images.forEach(img => {
-            img.addEventListener('click', () => {
-                const sciName = img.dataset.name;
+        if (!data) {
+            console.warn("Specie non trovata nel JSON:", sciName);
+            return;
+        }
 
-                // Foto grande
-                bigPhoto.src = img.src;
-                bigPhoto.alt = sciName;
+        bigPhoto.src = img.src;
+        bigPhoto.alt = sciName;
 
-                // Titoli
-                title.textContent = sciName;
-                subtitle.textContent = "Specie: " + sciName;
+        title.textContent = sciName;
+        subtitle.textContent = "Specie: " + sciName;
 
-                // Recupero dati dal JSON
-                const data = speciesData[sciName];
+        taxoSci.textContent = sciName;
+        taxoCommon.textContent = data.common || "–";
+        taxoClass.textContent = data["class"] || "–";
+        taxoOrder.textContent = data.order || "–";
+        taxoFamily.textContent = data.family || "–";
 
-                console.log("📌 Cliccato:", sciName);
-                console.log("➡️ JSON caricato:", jsonLoaded);
-                console.log("➡️ Dati trovati:", data);
+        description.textContent = data.description || template.description;
+        threats.textContent = data.threats || template.threats;
+        status.textContent = data.status || template.status;
 
-                if (!jsonLoaded) {
-                    console.warn("⚠️ JSON non ancora caricato. Attendere qualche istante e riprovare.");
-                }
+        description.classList.remove("placeholder");
+        threats.classList.remove("placeholder");
+        status.classList.remove("placeholder");
 
-                if (!data) {
-                    console.warn("⚠️ Nessun dato trovato per:", sciName, 
-                                 "\nChiavi disponibili nel JSON:", Object.keys(speciesData));
-                }
+        additionalImage1.style.display = data.image1 ? "block" : "none";
+        additionalImage1.src = data.image1 || "";
 
-                // Taxobox
-                taxoSci.textContent = sciName;
-                taxoCommon.textContent = data?.common || "–";
-                taxoClass.textContent = data?.class || "–";
-                taxoOrder.textContent = data?.order || "–";
-                taxoFamily.textContent = data?.family || "–";
+        additionalImage2.style.display = data.image2 ? "block" : "none";
+        additionalImage2.src = data.image2 || "";
 
-                // Testi variabili
-                description.textContent = data?.description || template.description;
-                threats.textContent = data?.threats || template.threats;
-                status.textContent = data?.status || template.status;
+        // Reset mappa
+        mapEmbed.src = "";
 
-                description.classList.remove("placeholder");
-                threats.classList.remove("placeholder");
-                status.classList.remove("placeholder");
+        if (data.mapUrl) {
+            mapEmbed.src = data.mapUrl;
+            mapEmbed.style.display = "block";
+            mapPlaceholder.style.display = "none";
+        } else {
+            mapEmbed.style.display = "none";
+            mapPlaceholder.style.display = "block";
+            mapPlaceholder.textContent = "Mappa non disponibile per questa specie";
+        }
+    });
+});
+</script>
 
-                // Immagini aggiuntive
-                if (data?.image1) {
-                    additionalImage1.src = data.image1;
-                    additionalImage1.style.display = 'block';
-                } else {
-                    additionalImage1.style.display = 'none';
-                }
-                if (data?.image2) {
-                    additionalImage2.src = data.image2;
-                    additionalImage2.style.display = 'block';
-                } else {
-                    additionalImage2.style.display = 'none';
-                }
-
-                // Mappa embed
-                if (data?.mapUrl) {
-                    mapEmbed.src = data.mapUrl;
-                    mapEmbed.style.display = 'block';
-                    mapPlaceholder.style.display = 'none';
-                } else {
-                    mapEmbed.style.display = 'none';
-                    mapPlaceholder.style.display = 'block';
-                    mapPlaceholder.textContent = 'Mappa non disponibile per questa specie';
-                }
-            });
-        });
-    </script>
     
 </body>
 </html>
