@@ -24,28 +24,28 @@
     "mapUrl": "https://solve.corila.it/datasets/geonode:tursips_truncatus_sempl/embed"
   },
   "Sternula albifrons": {
-    "common": "",
-    "class": "Aves",
+    "common": "Fraticello",
+    "class": "",
     "order": "",
     "family": "",
-    "description": "",
-    "threats": "",
-    "status": "",
-    "image1": "",
-    "image2": "",
-    "mapUrl": ""
+    "description": "Il fraticello (Sternula albifrons), una delle più piccole sterne in Europa, popola le aree costiere marine e le acque dolci interne. È una specie migratrice regolare e nidificante, presente solo occasionalmente in inverno. Costruisce i suoi nidi in semplici buche poco profonde, rivestite con frammenti di conchiglie e detriti. Questi nidi, posti a livello dell’acqua, sono spesso soggetti all’inondazione, causando la perdita delle uova. In Slovenia e in Italia, il fraticello nidifica in pochi siti tra cui le saline di Sečovlje, la Riserva Naturale di Val Stagnon e la laguna di Venezia. Durante il periodo riproduttivo, il fraticello si raduna in colonie numerose. È possibile osservarla mentre perlustra gli ambienti acquatici alla ricerca di piccoli pesci, la sua preda preferita, che cattura eseguendo brevi tuffi da pochi metri di altezza. Al termine della riproduzione, fraticelli nidificanti nelle colonie adriatiche (anche quelle più meridionali), padane e dell’Europa centro-orientale danno vita ad una spettacolare migrazione di muta che li porta a concentrarsi nella laguna di Venezia, che diviene per circa tre mesi uno dei siti chiave per la conservazione di questa specie",
+    "threats": "Come per le altre sterne, le minacce principali per questa specie sono la distruzione degli habitat di nidificazione, la malagestione dei livelli idrici dei siti, i cambiamenti climatici (innalzamento del livello dell’acque, abbondanti precipitazioni), presenza di predatori terrestri quali ratti, volpi ma anche il gabbiano reale",
+    "status": "Sebbene lo stato di conservazione a livello Europeo e Globale sia positivo, in Italia e in Slovenia la specie è considerata minacciata come suggerito dalla presenza sempre più irregolare di diverse colonie riproduttive anche in importanti siti storici. Trend positivi possono essere osservati in alcuni siti, come nella Riserva Naturale di Val Stagnon a seguito di interventi gestionali mirati a favorire la nidificazione di questa specie",
+    "image1": "https://solve.corila.it/documents/1427/embed",
+    "image2": "https://solve.corila.it/documents/1153/link",
+    "mapUrl": "https://solve.corila.it/datasets/geonode:sternula_abifrons_sempl/embed"
   },
   "Cladocora caespitosa": {
     "common": "",
     "class": "Aves",
     "order": "",
     "family": "",
-    "description": "",
-    "threats": "",
-    "status": "",
-    "image1": "",
-    "image2": "",
-    "mapUrl": ""
+    "description": "Cladocora caespitosa (Linneo, 1767) è l'unica sclerattinaria zooxantellata coloniale del Mediterraneo in grado di formare scogli (ermetici). Questa specie di corallo, appartenente alla famiglia dei Favidae, è considerata un "ingegnere degli ecosistemi" e svolge un ruolo cruciale nella produzione di carbonato di calcio, contribuendo alla formazione di strutture coralline. Si trova a profondità comprese tra i 5 e i 50 metri e può formare colonie di diversi metri quadri con esemplari fino a più di 60 cm di diametro. La sua plasticità ecologica le consente di colonizzare vari ambienti, dalle praterie algali superficiali ai fondali corallini circalitorali in condizioni di scarsa illuminazione",
+    "threats": "Le principali minacce per Cladocora caespitosa includono la presenza competitiva di macroalghe (basso rischio), condizioni ambientali sfavorevoli come temperature estreme e squilibri trofici dovuti ai cambiamenti climatici (medio rischio), compromissione della connettività a causa di sbiancamenti estesi (medio rischio), riscaldamento globale e onde di calore che intensificano i fenomeni di sbiancamento (alto rischio). L'ancoraggio e la pesca rappresentano minacce di basso livello, mentre l'eutrofizzazione presenta un rischio medio, bilanciato dall'aumento del cibo disponibile per le colonie.",
+    "status": "Nel complesso, il trend è considerato stabile sulla base delle valutazioni internazionali IUCN. A scala nazionale e locale è considerata in lieve declino in alcune aree italiane. La sua condizione a scala locale è in lieve declino(ISPRA https://www.isprambiente.gov.it/it/banche-dati/atlante-delle-specie-marine-protette/animali/invertebrati/cnidari/cladocora-caespitosa-linnaeus-1767).",
+    "image1": "https://solve.corila.it/documents/1427/embed",
+    "image2": "https://solve.corila.it/documents/1165/link",
+    "mapUrl": "https://solve.corila.it/datasets/geonode:cladocora_caespitosa_sempl/embed"
   },
   "Thalasseus sandvicensis": {
     "common": "",
