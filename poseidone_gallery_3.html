@@ -16,7 +16,8 @@
         }
 
         /* COLONNA SINISTRA – GALLERIA TIPO MASONRY ENTRO LA COLONNA */
-        .left-panel {
+
+      .left-panel {
             width: 50%;
             height: 100vh;
             overflow-y: auto;
@@ -25,17 +26,17 @@
             padding: 20px;
             box-sizing: border-box;
             border-right: 2px solid #ccc;
-            column-count: 2;     /* masonry a 2 colonne dentro la colonna sinistra */
-            column-gap: 8px;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
         }
+
         .left-panel-item {
             position: relative;
             overflow: hidden;
             border-radius: 10px;
             margin-bottom: 8px;
-            break-inside: avoid;
-            -webkit-column-break-inside: avoid;
-            -moz-column-break-inside: avoid;
             border: 1px solid #fff; /* sottile bordo bianco tra le immagini */
             background: #fff;
         }
@@ -153,6 +154,13 @@
             border-top: 1px solid #ddd;
             padding-top: 15px;
         }
+
+        @media (max-width: 900px) {
+    .left-panel {
+        grid-template-columns: 1fr;
+    }
+}
+
     </style>
 </head>
 <body>
