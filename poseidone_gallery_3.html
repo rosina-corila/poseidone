@@ -10,43 +10,43 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background: #f5f5f5;
-            display: flex;       /* due colonne affiancate */
-            height: 100vh;       /* pagina a tutta altezza */
-            overflow: hidden;    /* lo scroll avviene dentro le colonne */
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
         }
 
        /* COLONNA SINISTRA – GRIGLIA SEMPLICE */
-.left-panel {
-    width: 50%;
-    height: 100vh;
-    overflow-y: auto;
-    background: #ededed;
-    padding: 20px;
-    box-sizing: border-box;
-    border-right: 2px solid #ccc;
+        .left-panel {
+            width: 50%;
+            height: 100vh;
+            overflow-y: auto;
+            background: #ededed;
+            padding: 20px;
+            box-sizing: border-box;
+            border-right: 2px solid #ccc;
+            /* !!! Queste righe creano la griglia. Sono corrette. !!! */
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-}
+        .left-panel-item {
+            position: relative;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3; /* Mantiene le proporzioni 4:3 */
+        }
 
-.left-panel-item {
-    position: relative;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    aspect-ratio: 4 / 3;
-}
-
-.left-panel img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+        .left-panel img {
+            width: 100%;
+            height: 100%; /* L'immagine riempie il 100% dell'elemento con aspect-ratio */
+            object-fit: cover;
+            display: block;
+        }
 
 
-     
+        /* ... il resto del CSS che gestisce la didascalia e la colonna destra ... */
         .left-panel-caption {
             position: absolute;
             left: 8px;
@@ -61,8 +61,7 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-      
-
+        
         /* COLONNA DESTRA */
         .right-panel {
             width: 50%;
@@ -72,6 +71,8 @@
             box-sizing: border-box;
             background: white;
         }
+        
+        /* ... e tutto il resto del tuo codice CSS per la colonna destra, come era ... */
 
         #big-photo {
             width: 50%;
@@ -150,16 +151,15 @@
         }
 
         @media (max-width: 900px) {
-    .left-panel {
-        grid-template-columns: 1fr;
-    }
-}
+            .left-panel {
+                grid-template-columns: 1fr;
+            }
+        }
 
     </style>
 </head>
 <body>
 
-    <!-- COLONNA SINISTRA -->
     <div class="left-panel">
         <div class="left-panel-item">
             <img src="images/Caretta_caretta_.jpg" data-name="Caretta caretta" alt="Caretta caretta">
@@ -231,14 +231,10 @@
         </div>
     </div>
 
-    <!-- COLONNA DESTRA -->
     <div class="right-panel">
-
         <img id="big-photo" src="" alt="">
-
         <h1 id="species-title">Seleziona una specie</h1>
         <div id="species-subtitle" class="subtitle">Il nome scientifico apparirà qui</div>
-
         <div class="taxobox">
             <div class="taxo-row"><span class="taxo-label">Nome comune:</span> <span id="taxo-common">–</span></div>
             <div class="taxo-row"><span class="taxo-label">Nome scientifico:</span> <span id="taxo-sci">–</span></div>
@@ -246,33 +242,26 @@
             <div class="taxo-row"><span class="taxo-label">Ordine:</span> <span id="taxo-order">–</span></div>
             <div class="taxo-row"><span class="taxo-label">Famiglia:</span> <span id="taxo-family">–</span></div>
         </div>
-
-
         <div class="section-title">Descrizione della specie</div>
         <div id="species-description" class="text placeholder">
             Clicca su un'immagine nella colonna sinistra per caricare automaticamente la scheda completa.
         </div>
-
         <div class="section-title">Minacce</div>
         <div id="species-threats" class="text placeholder">–</div>
-
         <div class="section-title">Stato di conservazione</div>
         <div id="species-status" class="text placeholder">–</div>
-
         <div class="additional-images">
             <img id="additional-image-1" src="" alt="Immagine aggiuntiva 1" style="display: none;">
             <img id="additional-image-2" src="" alt="Immagine aggiuntiva 2" style="display: none;">
         </div>
-
         <div class="section-title">Mappa distribuzione</div>
         <div class="map-container">
             <iframe id="map-embed" class="map-embed" src="" frameborder="0" allowfullscreen style="display: none;"></iframe>
             <div id="map-placeholder" class="text placeholder">La mappa apparirà qui quando selezioni una specie</div>
         </div>
-
         <div class="credits">Schede generate automaticamente – Progetto Poseidone</div>
     </div>
-
+    
     <script>
         const template = {
             description: `Testo descrittivo uniforme per tutte le specie.`,
@@ -297,7 +286,7 @@
         const additionalImage2 = document.getElementById('additional-image-2');
         const mapEmbed = document.getElementById('map-embed');
         const mapPlaceholder = document.getElementById('map-placeholder');
-       
+        
         /* JSON-ready system */
         let speciesData = {};
         let jsonLoaded = false;
@@ -339,7 +328,7 @@
                 // Recupero dati dal JSON
                 const data = speciesData[sciName];
 
-                console.log("📌 Cliccato:", sciName);       // DEBUG
+                console.log("📌 Cliccato:", sciName);      // DEBUG
                 console.log("➡️ JSON caricato:", jsonLoaded); // DEBUG
                 console.log("➡️ Dati trovati:", data);       // DEBUG
 
@@ -395,8 +384,6 @@
             });
         });
     </script>
-
     
-
 </body>
 </html>
