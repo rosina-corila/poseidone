@@ -15,13 +15,11 @@
             overflow: hidden;    /* lo scroll avviene dentro le colonne */
         }
 
-        /* COLONNA SINISTRA – GALLERIA TIPO MASONRY ENTRO LA COLONNA */
-
-        .left-panel {
+       /* COLONNA SINISTRA – GRIGLIA SEMPLICE */
+.left-panel {
     width: 50%;
     height: 100vh;
     overflow-y: auto;
-    overflow-x: hidden;
     background: #ededed;
     padding: 20px;
     box-sizing: border-box;
@@ -29,17 +27,14 @@
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    align-items: start;
+    gap: 12px;
 }
 
 .left-panel-item {
     position: relative;
-    overflow: hidden;
-    border-radius: 10px;
     background: #fff;
-    border: 1px solid #fff;
-    align-self: start;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .left-panel img {
