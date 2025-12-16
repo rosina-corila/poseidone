@@ -2,13 +2,13 @@
   "Caretta caretta": {
     "common": "Tartaruga caretta",
     "class": "Testudines",
-    "order": "",
-    "family": "Testudinidae",
+    "order": "Testudines",
+    "family": "Cheloniidae",
     "description": "La tartaruga marina comune (Caretta caretta) svolge un ruolo ecologico vitale all'interno del suo ambiente marino, fungendo da specie chiave e contribuendo alla salute e all'equilibrio generale dell'ecosistema. La sua conservazione è fondamentale non solo per mantenere la salute degli ecosistemi marini, ma anche per salvaguardare la biodiversità, promuovere il turismo sostenibile e affrontare sfide ambientali più ampie come il cambiamento climatico e il degrado degli habitat. La protezione di questa specie protetta e dei suoi habitat è una responsabilità condivisa per garantire un ecosistema marino Mediterraneo sano per le generazioni a venire",
     "threats": "Mortalità diretta da bycatch da reti da posta, palangari, reti a strascico, disturbo presso i siti di nidificazione, traffico nautico che può causare collisioni. La pesca a strascico può inoltre causare distruzione di habitat.",
     "status": "La popolazione nel nord Adriatico è stata stimata una sola volta, evidenziando  una popolazione di 0,405 individui per km² (Fortuna et al. 2018). Per quanto riguarda l'attività di nidificazione, negli ultimi anni si è registrato un aumento del numero di nidi in tutta la penisola italiana, con un incremento anche in termini di latitudine (Hochscheid et al. 2022). Non sono disponibili dati sufficienti per identificare una tendenza alla crescita o al declino nel Mare Adriatico settentrionale.",
     "image1": "https://solve.corila.it/documents/1425/link",
-    "image2": "https://solve.corila.it/documents/1163/link",
+    "image2": "https://solve.corila.it/documents/1163/link",a
     "mapUrl": "https://solve.corila.it/datasets/geonode:caretta_caretta_sempl/embed"
   },
   "Tursiops truncatus": {
@@ -25,9 +25,9 @@
   },
   "Sternula albifrons": {
     "common": "Fraticello",
-    "class": "",
-    "order": "",
-    "family": "",
+    "class": "Aves",
+    "order": "Charadriiformes",
+    "family": "Laridae",
     "description": "Il fraticello (Sternula albifrons), una delle più piccole sterne in Europa, popola le aree costiere marine e le acque dolci interne. È una specie migratrice regolare e nidificante, presente solo occasionalmente in inverno. Costruisce i suoi nidi in semplici buche poco profonde, rivestite con frammenti di conchiglie e detriti. Questi nidi, posti a livello dell’acqua, sono spesso soggetti all’inondazione, causando la perdita delle uova. In Slovenia e in Italia, il fraticello nidifica in pochi siti tra cui le saline di Sečovlje, la Riserva Naturale di Val Stagnon e la laguna di Venezia. Durante il periodo riproduttivo, il fraticello si raduna in colonie numerose. È possibile osservarla mentre perlustra gli ambienti acquatici alla ricerca di piccoli pesci, la sua preda preferita, che cattura eseguendo brevi tuffi da pochi metri di altezza. Al termine della riproduzione, fraticelli nidificanti nelle colonie adriatiche (anche quelle più meridionali), padane e dell’Europa centro-orientale danno vita ad una spettacolare migrazione di muta che li porta a concentrarsi nella laguna di Venezia, che diviene per circa tre mesi uno dei siti chiave per la conservazione di questa specie",
     "threats": "Come per le altre sterne, le minacce principali per questa specie sono la distruzione degli habitat di nidificazione, la malagestione dei livelli idrici dei siti, i cambiamenti climatici (innalzamento del livello dell’acque, abbondanti precipitazioni), presenza di predatori terrestri quali ratti, volpi ma anche il gabbiano reale",
     "status": "Sebbene lo stato di conservazione a livello Europeo e Globale sia positivo, in Italia e in Slovenia la specie è considerata minacciata come suggerito dalla presenza sempre più irregolare di diverse colonie riproduttive anche in importanti siti storici. Trend positivi possono essere osservati in alcuni siti, come nella Riserva Naturale di Val Stagnon a seguito di interventi gestionali mirati a favorire la nidificazione di questa specie",
@@ -36,10 +36,10 @@
     "mapUrl": "https://solve.corila.it/datasets/geonode:sternula_abifrons_sempl/embed"
   },
   "Cladocora caespitosa": {
-    "common": "",
-    "class": "Aves",
-    "order": "",
-    "family": "",
+    "common": "madrepora cuscino",
+    "class": "Anthozoa",
+    "order": "Scleractinia",
+    "family": "Faviidae",
     "description": "Cladocora caespitosa (Linneo, 1767) è l'unica sclerattinaria zooxantellata coloniale del Mediterraneo in grado di formare scogli (ermetici). Questa specie di corallo, appartenente alla famiglia dei Favidae, è considerata un ingegnere degli ecosistemi e svolge un ruolo cruciale nella produzione di carbonato di calcio, contribuendo alla formazione di strutture coralline. Si trova a profondità comprese tra i 5 e i 50 metri e può formare colonie di diversi metri quadri con esemplari fino a più di 60 cm di diametro. La sua plasticità ecologica le consente di colonizzare vari ambienti, dalle praterie algali superficiali ai fondali corallini circalitorali in condizioni di scarsa illuminazione",
     "threats": "Le principali minacce per Cladocora caespitosa includono la presenza competitiva di macroalghe (basso rischio), condizioni ambientali sfavorevoli come temperature estreme e squilibri trofici dovuti ai cambiamenti climatici (medio rischio), compromissione della connettività a causa di sbiancamenti estesi (medio rischio), riscaldamento globale e onde di calore che intensificano i fenomeni di sbiancamento (alto rischio). L'ancoraggio e la pesca rappresentano minacce di basso livello, mentre l'eutrofizzazione presenta un rischio medio, bilanciato dall'aumento del cibo disponibile per le colonie.",
     "status": "Nel complesso, il trend è considerato stabile sulla base delle valutazioni internazionali IUCN. A scala nazionale e locale è considerata in lieve declino in alcune aree italiane. La sua condizione a scala locale è in lieve declino(ISPRA https://www.isprambiente.gov.it/it/banche-dati/atlante-delle-specie-marine-protette/animali/invertebrati/cnidari/cladocora-caespitosa-linnaeus-1767).",
@@ -48,10 +48,10 @@
     "mapUrl": "https://solve.corila.it/datasets/geonode:cladocora_caespitosa_sempl/embed"
   },
   "Thalasseus sandvicensis": {
-    "common": "",
+    "common": "beccapesci ",
     "class": "Aves",
-    "order": "",
-    "family": "",
+    "order": "Charadriiformes",
+    "family": "Laridae",
     "description": "Il beccapesci (Thalasseus sandvicensis) è una specie di sterna di medie dimensioni che si trova in diverse aree costiere. Ha un ampio raggio di distribuzione, che include l'Europa occidentale, il Mediterraneo, il Mar Nero e il Mar Caspio, con nidificazioni in Italia e Slovenia. Il beccapesci è legato ad acque costiere marine o salmastre, limpide e poco profonde, dove può pescare tuffandosi in volo. Per la riproduzione (laguna veneta) è invece legato a isolotti sabbiosi in lagune (barene, dossi) o saline (argini rotti, affioramenti nei bacini), nudi o con rada o bassa vegetazione alofitica. Costruisce i suoi nidi vicino all'acqua, in conche scavate abilmente nel terreno. Il tasso riproduttivo è contenuto, con non più di due uova deposte una volta all'anno e covate da entrambi i genitori. Si posa spesso su posatoi elevati come paletti e altri sostegni, spesso in associazione con altri sternidi (frequentemente con la sterna comune).",
     "threats": "Predazione ai nidi da parte di predatori terrestri e gabbiano reale, cambiamento climatico.",
     "status": "La specie ha uno status di conservazione sfavorevole in Europa (SPEC2: in declino), anche se il trend di popolazione a lungo termine in Italia è positivo, come pure i trend di areale.",
@@ -60,10 +60,10 @@
     "mapUrl": "https://solve.corila.it/datasets/geonode:thalasseus_sandvicensis_sempl/embed"
   },
   "Charadrius alexandrinus": {
-    "common": "",
+    "common": "fratino eurasiatico",
     "class": "Aves",
-    "order": "",
-    "family": "",
+    "order": "Charadriiformes",
+    "family": "Charadriidae",
     "description": "Il fratino è un limicolo con una distribuzione globale, ad eccezione delle Americhe, che si trova principalmente in zone costiere caratterizzate da acque basse, dove si nutre di diverse specie di invertebrati. La specie depone da 1 a 3 uova direttamente in piccoli avvallamenti della sabbia tra metà marzo e fine luglio, con un picco tra l'ultima decade di aprile e fine maggio. Il periodo di incubazione delle uova dura dai 24 ai 27 giorni. I piccoli, dopo appena un giorno dalla nascita, seguono i genitori alla ricerca di cibo camminando lungo la battigia; sono in grado di volare solo a 28 giorni di età. Costruisce i suoi nidi a terra utilizzando diversi materiali naturali, come conchiglie, ciottoli, erba e foglie, in una piccola depressione nel terreno. Predilige nidificare in prossimità del cavaliere d'Italia (Himantopus himantopus) fraticello (Sternula albifrons), gabbiano reale mediterraneo (Larus michahellis) e beccaccia di mare (Haematopus ostralegus).",
     "threats": "La principale minaccia per il fratino è rappresentata dalla scarsità e dall'alterazione dei siti di nidificazione idonei, nonché dalle inondazioni dovute a forti piogge e alte maree, dalla gestione inadeguata delle risorse idriche, dal disturbo antropico e dalla predazione sui nidi da parte di predatori terrestri. Sebbene la sua popolazione sia in declino su scala globale, si possono riscontrare aumenti localizzati",
     "status": "È un nidificante raro e localizzato in Slovenia ed in parte in Italia e fa parte della Lista rossa degli uccelli nidificanti, classificato come specie in pericolo. Oggi nidifica nelle saline di Sečovlje e Strunjan e sulle isole fangose della baia di Škocjan. La popolazione totale slovena consiste di 30-65 coppie nidificanti. La prima registrazione di nidificazione a Strunjan risale al 2010. Nelle saline di Strunjan sono stati segnalati 6 nidi e una coppia nidificante riuscita nel 2021. Nel 2022, il numero di coppie nidificanti è salito a 2-4, di cui 2 riuscite.",
@@ -72,10 +72,10 @@
     "mapUrl": "https://solve.corila.it/datasets/geonode:charadrius_alexandrinus_sempl/embed"
   },
   "Gulosus aristotelis": {
-    "common": "",
+    "common": "marangone dal ciuffo",
     "class": "Aves",
-    "order": "",
-    "family": "",
+    "order": "Suliformes",
+    "family": "Phalacrocoracidae",
     "description": "Il marangone dal ciuffo mediterraneo (Gulosus aristotelis desmarestii) rappresenta un uccello marino di notevole rilevanza ecologica nel Mediterraneo. Predilige nidificare principalmente su piccole isole lungo le coste croate, dove i suoi nidi sono spesso nascosti tra la vegetazione o protetti in anfratti rocciosi, al riparo dai predatori terrestri. La deposizione delle uova, che può variare da 1 a 6, inizia già nel mese di dicembre, estendendosi fino ad aprile o maggio. Al termine della stagione riproduttiva, questi uccelli intraprendono migrazioni verso il nord Adriatico (Golfo di Trieste, la Laguna di Venezia e il Delta del Po), con una popolazione stimata tra 6.000 e 10.000 individui. Queste aree sono caratterizzate da acque meno profonde e una maggiore abbondanza di pesci demersali, che rappresentano la loro principale fonte di nutrimento e sono facilmente accessibili.",
     "threats": "Riduzione delle risorse trofiche, modernizzazione degli impianti di mitilicoltura non più adatti per la sosta della specie, eventi meteorologici estremi (come precipitazioni intense durante il periodo riproduttivo), e presenza di specie aliene invasive.",
     "status": "Una diminuzione delle risorse alimentari potrebbe essere alla base dell’importante declino della popolazione di marangoni dal ciuffo nel Golfo di Trieste, con una diminuzione significativa del 44,7% tra il 2010 e il 2022. Questo declino potrebbe essere correlato all'attività di sovrapesca o a cambiamenti nella composizione trofica causati da modifiche ambientali. Sebbene non siano stati effettuati test diretti su questa relazione, nell'ultimo decennio si è verificata una significativa diminuzione degli sbarcati ittici nei porti di Grado e Marano Lagunare, rispettivamente del 74% e del 54%. Questa diminuzione è stata accompagnata da una corrispondente riduzione del numero di imbarcazioni da pesca del 20% (Confcooperative, 2023)",
@@ -84,10 +84,10 @@
     "mapUrl": "https://solve.corila.it/datasets/geonode:golosus_aristotelis_sempl/embed"
   },
   "Pinna nobilis": {
-    "common": "",
-    "class": "Aves",
-    "order": "",
-    "family": "",
+    "common": "pinna comune",
+    "class": "Bivalvia",
+    "order": "Ostreida",
+    "family": "Pinnidae",
     "description": "Pinna nobilis (L. 1758) (Bivalvia: Pinnidae) è il bivalve più grande del Mediterraneo, di cui è un endemismo. Questa specie sessile può superare il metro di lunghezza ed i 20-30 anni di vita. È un ermafrodita successivo, caratterizzato da maturazione asincrona dei gameti e fecondazione esterna, con la produzione di larve pelagiche. È presente in habitat marini di elevato valore ecologico, dall'intertidale fino ad oltre 50 m. La specie è fortemente associata a Posidonia oceanica, Cymodocea nodosa e altre fanerogame marine. Altri habitat includono lagune costiere, baie confinate, coste rocciose e affioramenti bio-geogenici quali tegnùe e trezze. Svolge un ruolo ecologico chiave quale ingegnere ecosistemico, determinando l’aumento della complessità strutturale dell'habitat e la biodiversità. Ospita anche alcune specie di crostacei simbionti nella cavità del mantello. Come filtratore, riduce la sostanza organica in sospensione e contribuisce alla funzionalità complessiva dell'ecosistema. Il bisso prodotto da questo mollusco è stato localmente utilizzato fin dall'antichità per la produzione di tessuti. Pinna nobilis può essere considerata una specie bandiera e ombrello",
     "threats": "Attualmente, Pinna nobilis è gravemente minacciata da una patologia responsabile di Eventi di Mortalità Massiva (MME). L’epidemia è scoppiata nel 2016 nel Mediterraneo occidentale e si è rapidamente diffusa verso est attraverso le principali correnti, con un drastico calo delle popolazioni in tutto il Mediterraneo. I tassi di mortalità sono estremamente elevati, fino al 100%. La malattia è stata associata ad un protozoo di nuova descrizione, Haplosporidium pinnae, che colpisce il sistema digestivo, ma sono stati identificati anche altri agenti eziologici potenzialmente coinvolti (quali Mycobacterium sp., Vibrio spp. ed un picornavirus), e ad oggi cause e dinamica non sono ancora pienamente chiarite. Le popolazioni delle lagune costiere e di altri ambienti confinati sembrano presentare popolazioni relitte e tassi di sopravvivenza leggermente più elevati. Inoltre la specie, nelle diverse fasi del suo ciclo vitale, è soggetta a numerose altre minacce su scala locale e regionale, spesso intrecciate tra loro, con impatti diretti ed indiretti e diversi livelli di severità: la regressione e la frammentazione delle praterie di fanerogame marine; la pesca a strascico, direttamente tramite catture accidentali o indirettamente attraverso il degrado degli habitat; l’ancoraggio di imbarcazioni; le attività di dragaggio ed altri lavori costieri, con rimozione meccanica dei sedimenti, risospensione e sedimentazione; le principali dinamiche associate al cambiamento climatico, tra cui l'aumento della temperatura dell'acqua, le ondate di calore, gli eventi climatici estremi, i cambiamenti nella stagionalità di temperature e precipitazioni; i processi di eutrofizzazione ed arricchimento organico, con conseguenti ipossie, anossie e crisi distrofiche; il bioaccumulo di contaminanti organici e inorganici; infine, benché ancora non pienamente comprovata, potrebbe essere significativa la predazione da parte di specie esotiche invasive, sia su larve planctoniche (es. da parte dello ctenoforo Mnemiopsis leidyi) che su stadi bentonici, marcatamente su giovani e giovani adulti, (es. da parte del granchio blu Callinectes sapidus).",
     "status": "Per il suo valore ecologico e la sua vulnerabilità, Pinna nobilis è soggetta a protezione da parte di normative nazionali e internazionali, tra cui in particolare la Convenzione di Barcellona e la Direttiva Habitat 92/43/CEE. Dal 2019, a causa delle epidemie in corso, la IUCN ha classificato la specie come in pericolo critico (CR). Il Nord Adriatico è stata una delle ultime aree raggiunta dall’epidemia, con fenomeni di MME segnalati a partire dal 2019 nelle acque del Friuli Venezia Giulia e dal 2020 presso le acque del Veneto e della Slovenia. Le informazioni relative alla distribuzione, dimensione delle popolazioni e caratteristiche demografiche nel contesto dell’area di progetto risultano fortemente eterogenee, frammentarie ed incomplete, anche per la distribuzione spaziale frammentata o dispersa di alcuni habitat. Parte dei dati disponibili ha carattere esclusivamente qualitativo. Data la gravità delle morie in atto, e tenendo in considerazione i dati disponibili, l’ampio life span della specie e le dinamiche epidemiche registrate, le valutazioni sono state condotte sulla base di due finestre temporali, dal 2013 a novembre 2019 e dal 2021 ad oggi (i dati relativi al periodo interposto sono oggetto di specifica valutazione). I dati disponibili consentono ad oggi, alla scala di indagine, esclusivamente un confronto relativo alla distribuzione spaziale di popolazioni ed esemplari vitali in habitat bentonici. Così come nel resto del Mediterraneo, anche nel nord Adriatico l’epidemia ha causato il tracollo delle popolazioni. Nei fondali delle acque marine del Veneto non è noto ad oggi alcun esemplare in vita. Permangono esemplari sopravvissuti in numero molto basso nelle acque del Friuli Venezia Giulia e della Slovenia. Pur con pochi dati quantitativi disponibili, percentuali leggermente minori di mortalità sembrano associate alle lagune ed altri ambienti confinati, in accordo a quanto osservato nel resto del Mediterraneo. In particolare, grazie all’ampia distribuzione e all’elevata densità pre-epidemica, la laguna di Venezia ospita tuttora probabilmente una delle più grandi popolazioni della specie, la quale ha mantenuto grossomodo la medesima estensione pre-MME pur con densità molto inferiori. Recenti eventi di reclutamento documentati tramite indagini mirate nell’intero arco Nord Adriatico sono probabilmente correlati alla presenza di tali popolazioni lagunari relitte. Queste sono tuttavia vulnerabili alle numerose minacce e pressioni proprie degli ecosistemi costieri di transizione. Ai fini della conservazione della specie è pertanto necessario sviluppare e implementare politiche di monitoraggio e gestione relative a tali ambienti, ed inquadrarle in un contesto metaecosistemico e su scala transfrontaliera",
@@ -96,10 +96,10 @@
     "mapUrl": "https://solve.corila.it/datasets/geonode:pinna_nobilis_sempl/embed"
   },
   "Lanius collurio": {
-    "common": "",
+    "common": "averla piccola",
     "class": "Aves",
-    "order": "",
-    "family": "",
+    "order": "Passeriformes",
+    "family": "Laniidae",
     "description": "L’averla piccola (Lanius collurio) è un uccello passeriforme migratore presente in Europa solo durante la stagione riproduttiva. Sverna nell'Africa subsahariana. Tipicamente una specie ecotonale, è legata ad ambienti aperti, purché vi sia abbastanza presenza di vegetazione arborea e arbustiva intorno alle radure. Ha una dieta molto varia e si nutre di invertebrati, rettili, anfibi, roditori, micromammiferi e altri piccoli passeriformi",
     "threats": "La rimozione dei margini di alberi e arbusti tra i campi, la semplificazione del paesaggio e il regime agricolo intensivo, insieme all'uso di pesticidi, hanno avuto un enorme impatto sulle popolazioni locali, specialmente nelle pianure del Nord Italia. Nell'area di studio le principali minacce sono il disturbo antropico e l'alterazione dell'habitat. Dovrebbe essere adottata una corretta gestione forestale nelle aree boscate per arricchire il sottobosco e lasciare spazio per le aree aperte. Fuori dai boschi, la principale minaccia nel contesto della modifica o perdita dell'habitat è la pressione dell'agricoltura intensiva, che porta alla rimozione di arbusti e alberi e all'uso frequente dei pesticidi sopra menzionati",
     "status": "Nonostante l’ampia distribuzione a scala nazionale e locale si registrano notevoli diminuzioni nelle popolazioni. Nella Pianura Padana è diminuita del 50% negli ultimi 10 anni. Tra il 1996-1998 e il 2007-2012 nella Provincia di Venezia questo uccello ha subito un declino locale e una frammentazione nella sua distribuzione che riflette la tendenza generale della popolazione. Negli ultimi 5 anni è stata confermata almeno una coppia riproduttiva nel Bosco delle Lame, anche se i resoconti sono occasionali e discontinui. Secondo Natura 2000, nel Bosco di Lison (1996) si segnala la presenza dell’averla piccola, ma lo valuta come 'molto raro'. Da allora, non sono noti altri resoconti per questo sito. La specie è classificata come 'Vulnerabile' nella Lista Rossa Italiana, a causa del declino della popolazione locale. I vigneti presenti attorno alle tre aree di studio sono considerati idonei per la specie secondo il punteggio GISBAU. Tuttavia, un monitoraggio più accurato dovrebbe prendere in considerazione le specifiche pratiche agricole adottate in ogni sito per valutare se sono benefiche per la presenza di questa specie o meno. La presenza del sottobosco è anche fondamentale per la proliferazione di questo uccello",
@@ -108,22 +108,22 @@
     "mapUrl": "https://solve.corila.it/datasets/geonode:lanius_collurio/embed"
   },
   "Canis aureus syriacus": {
-    "common": "",
-    "class": "Aves",
-    "order": "",
-    "family": "",
-    "description": "",
-    "threats": "",
-    "status": "",
+    "common": "sciacallo dorato",
+    "class": "Mammalia",
+    "order": "Carnivora",
+    "family": "Canidae",
+    "description": "Lo sciacallo dorato (Canis aureus) è un mesocarnivoro ampiamente distribuito che si trova dall'Asia sud-orientale all'Europa centrale. Questa specie mostra una buona tolleranza verso una vasta gamma di habitat. In Italia, questa specie è considerata relativamente sinantropica nella maggior parte dei casi, essendo presente anche in ambienti peri-urbani e coltivazioni. Tuttavia, lo sciacallo dorato ha una chiara preferenza per habitat boschivi o arbustivi con qualche tipo di bacini idrici. I primi dati dall'Italia risalgono alla metà degli anni '80 e '90, con le prime presenze confermate di coppie riproduttive nelle province di Belluno e Udine. Attualmente, i dati più recenti (2021) stimano un numero totale di sciacalli compreso tra 196 e 250 individui per l'intero Paese. La specie è ora ben distribuita nel Nord Italia. Nell'area di studio, la presenza stabile di sciacalli dorati è stata suggerita inizialmente dagli incontri casuali da parte degli abitanti locali, e successivamente confermata da una campagna di monitoraggio nel 2021-2022 dell'Università di Udine per le foreste di Bandiziol e Prassaccon. Il numero totale di individui è sconosciuto. Nello stesso anno, il monitoraggio preliminare nel Bosco delle Lame non ha registrato alcun sciacallo nell'area. La sua presenza a Lison è ancora sconosciuta",
+    "threats": "La specie può essere minacciata da abbattimenti illegali, abbattimenti per errore e collisioni con automobili. La competizione naturale con carnivori più grandi (come i lupi) può prevalere su questa specie",
+    "status": "Lo stato di conservazione della specie è valutato come “Quasi Minacciato” secondo l'IUCN a causa della vicinanza alle popolazioni nei Balcani, che contribuisce a un afflusso significativo di nuovi individui, riducendo così il rischio di estinzione della specie in questo paese. Nel Nord-Est Italia, questa specie sta espandendosi piuttosto rapidamente, come dimostra la sua recente presenza in Bandiziol e Prassaccon",
     "image1": "",
     "image2": "",
-    "mapUrl": ""
+    "mapUrl": "https://solve.corila.it/datasets/geonode:canis_aureus/embed"
   },
   "Caprimulgus europaeus": {
-    "common": "",
+    "common": "succiacapre",
     "class": "Aves",
-    "order": "",
-    "family": "",
+    "order": "Caprimulgiformes",
+    "family": "Caprimulgidae",
     "description": "Il succiacapre (Caprimulgus europaeus) è un uccello notturno legato a habitat aridi e aperti in tutta l'Eurasia, distribuendosi fino alla Cina nord-occidentale e alla Mongolia. Questo uccello passeriforme migratore a lunga distanza si riproduce nel nostro continente e sverna nell'Africa subsahariana. La sua colorazione criptica lo aiuta a nascondersi a terra durante il giorno; di notte, questo uccello caccia insetti negli habitat aperti e negli spazi boschivi, usando i rami degli alberi come posatoi. È quindi legato a praterie secche o, in generale, ad ambienti xerici con copertura arborea non omogenea.",
     "threats": "La più grande minaccia che questo uccello sta affrontando è la perdita di habitat. La semplificazione del paesaggio e il regime agricolo intensivo, insieme all'uso di pesticidi, hanno un impatto sulle popolazioni locali. Il mantenimento ambienti aperti sarebbe una buona strategia per la sua conservazione, e questa attività sta attualmente diventando una pratica abbandonata per motivi socioeconomici. Nell'area di studio, le principali minacce sono il disturbo antropico e l'alterazione dell'habitat. Dovrebbe essere adottata una corretta gestione forestale nelle aree boscate per mantenere aree aperte. Fuori dai boschi, la principale minaccia nel contesto della modifica o perdita dell'habitat è la pressione dell'agricoltura intensiva, che porta alla rimozione di arbusti e alberi e all'uso frequente dei pesticidi sopra menzionati",
     "status": "Sebbene la popolazione italiana abbia mostrato un decremento nei numeri, lo stato di conservazione del succiacapre è valutato come Quasi Minacciato secondo la Lista Rossa Italiana. Infatti, il declino non è stato così ripido da suggerire di classificare la specie come Vulnerabile. I vigneti presenti attorno alle tre aree di studio sono considerati adatti per la specie secondo il punteggio GISBAU. Tuttavia, un monitoraggio più accurato dovrebbe prendere in considerazione le specifiche pratiche agricole adottate in ogni sito per valutare se sono benefiche per la presenza di questa specie o meno",
@@ -132,72 +132,75 @@
     "mapUrl": "https://solve.corila.it/datasets/geonode:caprimulgus_europaeus/embed"
   },
   "Dryocopus martius": {
-    "common": "",
+    "common": "picchio nero",
     "class": "Aves",
-    "order": "",
-    "family": "",
-    "description": "",
-    "threats": "",
-    "status": "",
+    "order": "Piciformes",
+    "family": "Picidae",
+    "description": "Il picchio nero (Dryocopus martius) è la specie di picchio più grande che abita il nostro continente. È ampiamente distribuito in Eurasia, dalla Spagna settentrionale alla Siberia. In Italia, è molto più comune nelle Alpi che negli Appennini. Questa specie è legata a foreste estese e mature, sia in ambienti montani che pianeggianti. La presenza di una quantità considerevole di alberi in decomposizione è fondamentale per sostenere una popolazione vitale in una determinata area, poiché questi implicano la presenza di coleotteri xilofagi e formiche, di cui questa specie si nutre",
+    "threats": "Le principali minacce che questa specie sta affrontando sono la perdita di foreste mature, la semplificazione del sottobosco e la rimozione della biomassa morta dalle foreste. Tuttavia, le aree boschive complessive stanno attualmente aumentando in tutto il Paese a causa dell'emigrazione dalle aree rurali e dell'abbandono delle tradizionali tecniche di coltivazione estensive. L'invecchiamento progressivo delle foreste coinvolte in questo monitoraggio è benefico per questa specie. Una gestione adeguata di queste aree dovrebbe mantenere un numero adeguato di alberi morti in loco per promuovere il processo naturale di decomposizione. Se questi requisiti saranno soddisfatti, ci saranno possibilità di assistere a una futura colonizzazione di queste aree da parte del picchio nero.",
+    "status": "Lo stato di conservazione della specie è valutato come “Quasi Minacciato” secondo l'IUCN a causa della sua ampia distribuzione e del lieve aumento della popolazione. Nell'area di studio, la popolazione di picchi neri riflette la tendenza generale che si verifica nel resto del Paese, con la recente colonizzazione delle pianure nel nord-est del Veneto. In Italia, il picchio nero sembra aumentare leggermente il suo numero ed espandere la sua distribuzione. I resoconti delle aree pianeggianti nel Veneto, più a sud delle Alpi, mostra che la specie stanno diventando più comune, specialmente durante l'inverno. Nella Provincia di Venezia questo picchio non nidifica, e la sua presenza è occasionale e limitata alla stagione invernale. Questo uccello è stato occasionalmente osservato in incontri casuali che sono avvenuti relativamente vicino all'area di studio. Tutti i resoconti sono limitati alla stagione invernale",
     "image1": "",
-    "image2": "",
-    "mapUrl": ""
+    "image2": "https://solve.corila.it/documents/1151/link",
+    "mapUrl": "https://solve.corila.it/datasets/geonode:dryocopus_martius/embed"
   },
   "Sterna hirundo": {
-    "common": "",
+    "common": "Sterna comune",
     "class": "Aves",
-    "order": "",
-    "family": "",
+    "order": "Charadriiformes",
+    "family": "Laridae",
     "description": "La sterna comune (Sterna hirundo) è un uccello migratore e nidificante regolare nel Golfo di Trieste, principalmente nelle valli da pesca lagunari. Nelle aree continentali, preferisce isolotti rocciosi o ciottolosi nei laghi o sponde ghiaiose nei letti dei fiumi, così come paludi, stagni o prati umidi. In Italia e Slovenia la sterna comune è un nidificante coloniale sia nell’entroterra che lungo la costa. La nidificazione avviene lungo la costa sia in contesti naturali su argini coperti da piante alofile e isole fangose, ma anche su isolotti e zattere adibite per lo scopo. La stagione riproduttiva è compresa tra aprile e maggio e nell’anno compie una sola covata. Il nido consiste in una semplice depressione del terreno presso l’acqua tra i detriti di conchiglie e viene ornato con fili d’erba e alghe. Si ciba di piccoli pesci ed avannotti, anellidi, crostacei, molluschi, echinodermi ed insetti",
     "threats": "Minacciata principalmente dalla distruzione degli habitat di nidificazione. La specie dipende fortemente dalla gestione dei siti di nidificazione creati dall’uomo. Nelle saline di Sečovlje, si segnalano nidificazioni fallimentari a causa di condizioni meteorologiche sfavorevoli come pioggia e basse temperature. Anche la crescita eccessiva della vegetazione nei siti di nidificazione e le elevate pressioni predatorie rappresentano una minaccia. L’innalzamento del livello del mare causa la perdita di habitat idoneo per la riproduzione.",
     "status": "La specie è stata caratterizzata per molti anni da un trend riproduttivo negativo in Laguna di Venezia (Scarton, 2010; Scarton et al., 2019), che pare solo recentemente essersi arrestato (Scarton et al. 2019).",
     "image1": "https://solve.corila.it/documents/1432/embed",
     "image2": "https://solve.corila.it/documents/1155/link",
-    "mapUrl": "https://solve.corila.it/datasets/geonode:sterna_hirundo/embed"
+    "mapUrl": "https://solve.corila.it/datasets/geonode:sterna_hirundo_sempl/embed"
   },
   "Somateria mollissima": {
-    "common": "",
+    "common": "Edredone",
     "class": "Aves",
-    "order": "",
-    "family": "",
-    "description": "",
-    "threats": "",
-    "status": "",
+    "order": "Anseriformes",
+    "family": "Anatidae",
+    "description": "L'edredone (Somateria mollissima) è una specie di anatra marina a distribuzione principalmente circumpolare sebbene sia nidificante anche in Italia, nel Golfo di La Spezia e Trieste. L'edredone adulto maschio è facilmente riconoscibile per il suo piumaggio bianco sul dorso e nero sul ventre, con il capo di colore bruno-verde. La femmina, invece, è di colore bruno scuro e si distingue per la sua grande taglia e la forma della testa, che la rendono unica tra gli altri anatidi femminili. Queste anatre marine formano grandi colonie costiere, talvolta composte da migliaia di individui. Durante il giorno, si alternano tra momenti di riposo e di ricerca di cibo. Spesso sostano sulle coste per pulire il piumaggio. Si nutrono immergendosi nelle acque marine alla ricerca di pesci, crostacei e molluschi, con una particolare predilezione per le cozze, che ingeriscono intere.",
+    "threats": "attività di disturbo antropico (barche, canoisti, diportisti) e presenza di predatori terrestri presso i siti di nidificazione che spesso portano all'abbandono dei nidi. Anche la modernizzazione dei sistemi di mitilicoltura (passaggio da biventia a monoventia) porta alla perdita di siti idonei alla sosta di adulti e giovani (Scridel et al. 2020, 2023)",
+    "status": "È specie indicatrice della Strategia Marina ed è stata recentemente classificata come  quasi minacciata  dalla IUCN a causa di un modesto declino della popolazione globale. La popolazione stimata nel Golfo di Trieste è di circa 80 individui ed è generalmente stabile, sebbene vi sia una tendenza a un leggero declino della popolazione (-11%, passando da 78 a 69 individui). Tuttavia, la contrazione spaziale della specie è più evidente sia nel Golfo di Trieste (rarefazione sia sul lato orientale che su quello occidentale) che nell'Adriatico (contrazione di 7 unità cartografiche 10x10 km negli intervalli 2009-2015 e 2017-2023).",
     "image1": "",
-    "image2": "",
-    "mapUrl": ""
+    "image2": "https://solve.corila.it/documents/1161/link",
+    "mapUrl": "https://solve.corila.it/datasets/geonode:somateria_molissima_sempl/embed"
   },
   "Ichthyaetus melanocephalus": {
-    "common": "",
+    "common": "gabbiano corallino",
     "class": "Aves",
-    "order": "",
-    "family": "",
-    "description": "",
-    "threats": "",
-    "status": "",
+    "order": "Charadriiformes",
+    "family": "Laridae",
+    "description": "Il gabbiano corallino (Ichthyaetus melanocephalus) è un uccello della famiglia dei Laridi, tipicamente costiero e marino. Originariamente diffuso lungo le coste del Mar Nero e del Mediterraneo orientale, dove ancora oggi si riproduce circa il 90% della popolazione mondiale, il gabbiano corallino ha recentemente esteso il suo areale, sia per quanto riguarda la nidificazione che lo svernamento, espandendosi prima verso oriente e successivamente verso nord e ovest rispetto alla sua distribuzione originaria. In Italia, è un migratore regolare, svernante e nidificante molto localizzato. Questo gabbiano predilige le lagune costiere per nidificare, soprattutto su strisce di sabbia occasionalmente vegetate. È più facilmente osservabile in inverno, quando alla popolazione nidificante si aggiungono numerosi migratori. La sua presenza è strettamente legata alla disponibilità di cibo, e sebbene sia solitamente pelagico, può avventurarsi nell'entroterra in certi periodi dell'anno, raggiungendo campagne e aree agricole come oliveti, vigneti e campi arati",
+    "threats": "Le principali minacce per il gabbiano corallino includono la vulnerabilità dovuta alla concentrazione delle coppie nidificanti in pochi siti, rendendo la specie suscettibile a eventi negativi. Le variazioni del livello idrico nelle aree di nidificazione possono influenzare negativamente la disponibilità di siti adatti e l'esito della riproduzione. Il disturbo eccessivo alle colonie può causare danni significativi alla specie. In Italia, il disturbo alle colonie è un problema, ma nel Mar Nero, il principale sito di nidificazione, si registrano gravi conseguenze con un alto tasso di nidificazioni fallite a causa del disturbo antropico",
+    "status": "Nelle aree di studio soggette al monitoraggio di questa specie (escludendo la Laguna Veneta), il gabbiano corallino compare durante le migrazioni primaverili e autunnali e occasionalmente come residente invernale. Nonostante le fluttuazioni occasionali, il trend complessivo è considerato negativo a causa del declino osservato negli ultimi 10 anni in termini di abbondanza",
     "image1": "",
-    "image2": "",
-    "mapUrl": ""
+    "image2": "https://solve.corila.it/documents/1156/link",
+    "mapUrl": "https://solve.corila.it/datasets/geonode:ichthyaetus_melanocephalus_sempl/embed"
   },
   "Himantopus himantopus": {
-    "common": "",
+    "common": "cavaliere d'Italia",
     "class": "Aves",
-    "order": "",
-    "family": "",
-    "description": "",
-    "threats": "",
-    "status": "",
+    "order": "Charadriiformes",
+    "family": "Recurvirostridae",
+    "description": "Questa specie migratoria è prevalentemente diffusa nelle zone umide di tutta l'Africa e l'Eurasia. Predilige habitat di acqua dolce, salata o salmastra, come paludi, lagune e saline, dove si alimenta e nidifica. La sua dieta consiste principalmente di invertebrati, come molluschi e crostacei, che raccoglie dalla superficie dell'acqua utilizzando il suo lungo becco simile ad un ago. Il cavaliere d'Italia è considerato una specie ombrello: proteggendola, si contribuisce alla protezione di altre specie. Nel Mediterraneo, la sua presenza indica una gestione adeguata del regime idrico e della salinicultura tradizionale",
+    "threats": "Principalmente minacciata dalla perdita di habitat e dalle fluttuazioni dei livelli d'acqua durante la stagione di schiusa, quando l'innalzamento dell'acqua comporta la perdita delle uova. Per la sopravvivenza della specie è essenziale preservare habitat adatti. Tali aree sono molto importanti per la biodiversità in generale.",
+    "status": "La tendenza della popolazione è incerta ma si stima che sia stabile. Negli ultimi 30 anni, il numero di coppie riproduttive è aumentato significativamente, grazie alla gestione adeguata degli habitat, al regime idrico e alla protezione dei siti di nidificazione",
     "image1": "",
-    "image2": "",
-    "mapUrl": ""
+    "image2": "https://solve.corila.it/documents/1159/link",
+    "mapUrl": "https://solve.corila.it/datasets/geonode:himantopus_himantopus_sempl/embed"
   },
   "Calidris alpina": {
-    "common": "",
+    "common": "piovanello pancianera",
     "class": "Aves",
-    "order": "",
-    "family": "",
-    "description": "",
-    "threats": "",
-    "status": ""
+    "order": "Charadriiformes",
+    "family": "Scolopacidae",
+    "description": "Il piovanello pancianera (Calidris alpina) è un piccolo limicolo molto diffuso in Europa. Nidifica nella tundra e nelle regioni umide del Nord Europa, includendo torbiere e prati costieri, anche salmastri. Al di fuori del periodo riproduttivo, è di passo su bassifondi marini. Nell'area di studio, è un migratore regolare e svernante. La specie è altamente gregaria in inverno, talvolta formando grandi stormi con migliaia di individui su fanghiglie costiere o spiagge sabbiose. Grandi numeri possono essere spesso osservati volteggiare in volo sincronizzato durante le tappe migratorie o nel loro habitat invernale. Gli invertebrati costituiscono la parte principale della dieta del piovanello pancianera, sia nei siti riproduttivi che fuori da essi, nutrendosi principalmente di molluschi, vermi e crostacei nelle aree costiere",
+    "threats": "Le potenziali minacce per la specie includono la trasformazione degli ambienti di sosta e alimentazione, la variazione dei livelli delle acque nei siti di svernamento, il disturbo venatorio nelle aree di svernamento, la molluschicoltura e il saturnismo. Altre minacce potenziali sono rappresentate dai cambiamenti climatici globali",
+    "status": "Il piovanello pancianera ha un areale estremamente vasto e, sebbene sembri che la popolazione stia diminuendo, resta comunque molto numerosa. La Unione Internazionale per la Conservazione della Natura (IUCN) ha valutato che la minaccia per la specie è di  Minor preoccupazione . Il piovanello pancianera è una delle specie a cui si applica l'Accordo sulla Conservazione degli Uccelli Acquatici Migratori Africano-Eurasiatici (AEWA).",
+    "image1": "",
+    "image2": "https://solve.corila.it/documents/1157/link",
+    "mapUrl": "https://solve.corila.it/datasets/geonode:calidris_alpina_sempl/embed"
   }
 }
