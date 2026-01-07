@@ -297,7 +297,7 @@ let jsonLoaded = false;
 
 async function loadSpeciesData() {
     try {
-        const res = await fetch("./species.json");
+        const res = await fetch("./species_eng.json");
         if (!res.ok) throw new Error(res.status);
         speciesData = await res.json();
         jsonLoaded = true;
