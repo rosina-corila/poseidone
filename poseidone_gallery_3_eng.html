@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poseidone – Schede specie</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* COLONNA SINISTRA – GRIGLIA CORRETTA */
+        .left-panel {
+            width: 50%;
+            height: 100vh;
+            overflow-y: auto;
+            background: #ededed;
+            padding: 20px;
+            box-sizing: border-box;
+            border-right: 2px solid #ccc;
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: minmax(400px, auto); /* Altezza minima per le righe */
+            gap: 12px;
+            align-content: start;
+        }
+
+        .left-panel-item {
+            position: relative;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s;
+            /* Aspect ratio per mantenere proporzioni 4:3 */
+            aspect-ratio: 4 / 3;
+        }
+
+        .left-panel-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .left-panel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: flex;
+        }
+
+        .left-panel-caption {
+            position: absolute;
+            left: 8px;
+            bottom: 8px;
+            padding: 4px 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            max-width: 90%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        /* COLONNA DESTRA */
+        .right-panel {
+            width: 50%;
+            height: 100vh;
+            padding: 30px;
+            overflow-y: auto;
+            box-sizing: border-box;
+            background: white;
+        }
+
+        #big-photo {
+            width: 50%;
+            border: 3px solid #444;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .additional-images {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .additional-images img {
+            width: 48%;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .additional-images img:hover {
+            transform: scale(1.02);
+            border-color: #444;
+        }
+
+        .map-container {
+            margin-top: 25px;
+            margin-bottom: 20px;
+        }
+        .map-embed {
+            width: 100%;
+            height: 400px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .taxobox {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            background: #fafafa;
+            margin-top: 20px;
+        }
+        .taxo-row {
+            margin: 5px 0;
+        }
+        .taxo-label {
+            font-weight: bold;
+        }
+
+        h1 { margin-top: 0; }
+        .subtitle {
+            font-size: 1.15rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+            color: #222;
+        }
+        .text { line-height: 1.65; color: #333; }
+        .placeholder { color: #777; }
+
+        .credits {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #888;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+
+        @media (max-width: 900px) {
+            .left-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="left-panel">
+        <div class="left-panel-item">
+            <img src="images/Caretta_caretta_.jpg" data-name="Caretta caretta" alt="Caretta caretta">
+            <div class="left-panel-caption">Caretta caretta</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Tursiops_truncatus.jpg" data-name="Tursiops truncatus" alt="Tursiops truncatus">
+            <div class="left-panel-caption">Tursiops truncatus</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Sternula_albifrons.jpg" data-name="Sternula albifrons" alt="Sternula albifrons">
+            <div class="left-panel-caption">Sternula albifrons</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Cladocora_caespitosa.jpg" data-name="Cladocora caespitosa" alt="Cladocora caespitosa">
+            <div class="left-panel-caption">Cladocora caespitosa</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Thalasseus_sandvicensis.jpg" data-name="Thalasseus sandvicensis" alt="Thalasseus sandvicensis">
+            <div class="left-panel-caption">Thalasseus sandvicensis</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Charadrius_alexandrinus.jpg" data-name="Charadrius alexandrinus" alt="Charadrius alexandrinus">
+            <div class="left-panel-caption">Charadrius alexandrinus</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Gulosus_aristotelis.jpg" data-name="Gulosus aristotelis" alt="Gulosus aristotelis">
+            <div class="left-panel-caption">Gulosus aristotelis</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Pinna_nobilis.jpeg" data-name="Pinna nobilis" alt="Pinna nobilis">
+            <div class="left-panel-caption">Pinna nobilis</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Lanius_collurio.jpg" data-name="Lanius collurio" alt="Lanius collurio">
+            <div class="left-panel-caption">Lanius collurio</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Canis_aureus_syriacus.jpg" data-name="Canis aureus syriacus" alt="Canis aureus syriacus">
+            <div class="left-panel-caption">Canis aureus syriacus</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Caprimulgus_europaeus.jpg" data-name="Caprimulgus europaeus" alt="Caprimulgus europaeus">
+            <div class="left-panel-caption">Caprimulgus europaeus</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Dryocopus_martius.jpg" data-name="Dryocopus martius" alt="Dryocopus martius">
+            <div class="left-panel-caption">Dryocopus martius</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Sterna_hirundo.jpg" data-name="Sterna hirundo" alt="Sterna hirundo">
+            <div class="left-panel-caption">Sterna hirundo</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Somateria_mollissima.jpg" data-name="Somateria mollissima" alt="Somateria mollissima">
+            <div class="left-panel-caption">Somateria mollissima</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Ichthyaetus_melanocephalus.jpg" data-name="Ichthyaetus melanocephalus" alt="Ichthyaetus melanocephalus">
+            <div class="left-panel-caption">Ichthyaetus melanocephalus</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Himantopus_himantopus.jpg" data-name="Himantopus himantopus" alt="Himantopus himantopus">
+            <div class="left-panel-caption">Himantopus himantopus</div>
+        </div>
+        <div class="left-panel-item">
+            <img src="images/Calidris-alpina.jpg" data-name="Calidris alpina" alt="Calidris alpina">
+            <div class="left-panel-caption">Calidris alpina</div>
+        </div>
+    </div>
+
+    <div class="right-panel">
+        <img id="big-photo" src="" alt="">
+        <h1 id="species-title">Seleziona una specie</h1>
+        <div id="species-subtitle" class="subtitle">Il nome scientifico apparirà qui</div>
+        <div class="taxobox">
+            <div class="taxo-row"><span class="taxo-label">Name:</span> <span id="taxo-common">–</span></div>
+            <div class="taxo-row"><span class="taxo-label">Scientific name:</span> <span id="taxo-sci">–</span></div>
+            <div class="taxo-row"><span class="taxo-label">Class:</span> <span id="taxo-class">–</span></div>
+            <div class="taxo-row"><span class="taxo-label">Order:</span> <span id="taxo-order">–</span></div>
+            <div class="taxo-row"><span class="taxo-label">Family:</span> <span id="taxo-family">–</span></div>
+        </div>
+        <div class="section-title">Description of the species</div>
+        <div id="species-description" class="text placeholder">
+            Click on an image in the left column to automatically load the full profile..
+        </div>
+        <div class="section-title">Threats</div>
+        <div id="species-threats" class="text placeholder">–</div>
+        <div class="section-title">State of conservation</div>
+        <div id="species-status" class="text placeholder">–</div>
+        <div class="additional-images">
+            <img id="additional-image-1" src="" alt="Immagine aggiuntiva 1" style="display: none;">
+            <img id="additional-image-2" src="" alt="Immagine aggiuntiva 2" style="display: none;">
+        </div>
+        <div class="section-title">Distribution map</div>
+        <div class="map-container">
+            <iframe id="map-embed" class="map-embed" src="" frameborder="0" allowfullscreen style="display: none;"></iframe>
+            <div id="map-placeholder" class="text placeholder">The map will appear here when you select a species</div>
+        </div>
+        <div class="credits">Schede generate automaticamente – Progetto Poseidone</div>
+    </div>
+    
+   <script>
+const template = {
+    description: "Testo descrittivo uniforme per tutte le specie.",
+    threats: "Minacce standard.",
+    status: "Stato di conservazione standard."
+};
+
+const images = document.querySelectorAll('.left-panel img');
+
+const bigPhoto = document.getElementById('big-photo');
+const title = document.getElementById('species-title');
+const subtitle = document.getElementById('species-subtitle');
+const taxoSci = document.getElementById('taxo-sci');
+const taxoCommon = document.getElementById('taxo-common');
+const taxoClass = document.getElementById('taxo-class');
+const taxoOrder = document.getElementById('taxo-order');
+const taxoFamily = document.getElementById('taxo-family');
+const description = document.getElementById('species-description');
+const threats = document.getElementById('species-threats');
+const status = document.getElementById('species-status');
+const additionalImage1 = document.getElementById('additional-image-1');
+const additionalImage2 = document.getElementById('additional-image-2');
+const mapEmbed = document.getElementById('map-embed');
+const mapPlaceholder = document.getElementById('map-placeholder');
+
+let speciesData = {};
+let jsonLoaded = false;
+
+async function loadSpeciesData() {
+    try {
+        const res = await fetch("./species_eng.json");
+        if (!res.ok) throw new Error(res.status);
+        speciesData = await res.json();
+        jsonLoaded = true;
+        console.log("✅ JSON caricato:", Object.keys(speciesData).length);
+    } catch (err) {
+        console.error("❌ Errore caricamento JSON:", err);
+    }
+}
+
+loadSpeciesData();
+
+images.forEach(img => {
+    img.addEventListener('click', () => {
+
+        if (!jsonLoaded) {
+            alert("Dati in caricamento, riprova tra un istante.");
+            return;
+        }
+
+        const sciName = img.dataset.name;
+        const data = speciesData[sciName];
+
+        if (!data) {
+            console.warn("Specie non trovata nel JSON:", sciName);
+            return;
+        }
+
+        bigPhoto.src = img.src;
+        bigPhoto.alt = sciName;
+
+        title.textContent = sciName;
+        subtitle.textContent = "Specie: " + sciName;
+
+        taxoSci.textContent = sciName;
+        taxoCommon.textContent = data.common || "–";
+        taxoClass.textContent = data["class"] || "–";
+        taxoOrder.textContent = data.order || "–";
+        taxoFamily.textContent = data.family || "–";
+
+        description.textContent = data.description || template.description;
+        threats.textContent = data.threats || template.threats;
+        status.textContent = data.status || template.status;
+
+        description.classList.remove("placeholder");
+        threats.classList.remove("placeholder");
+        status.classList.remove("placeholder");
+
+        additionalImage1.style.display = data.image1 ? "block" : "none";
+        additionalImage1.src = data.image1 || "";
+
+        additionalImage2.style.display = data.image2 ? "block" : "none";
+        additionalImage2.src = data.image2 || "";
+
+        // Reset mappa
+        mapEmbed.src = "";
+
+        if (data.mapUrl) {
+            mapEmbed.src = data.mapUrl;
+            mapEmbed.style.display = "block";
+            mapPlaceholder.style.display = "none";
+        } else {
+            mapEmbed.style.display = "none";
+            mapPlaceholder.style.display = "block";
+            mapPlaceholder.textContent = "Mappa non disponibile per questa specie";
+        }
+    });
+});
+</script>
+
+    
+</body>
+</html>
