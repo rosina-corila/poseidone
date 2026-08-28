@@ -407,11 +407,11 @@ async function init() {
         console.error("❌ Errore caricamento species_it.json:", err);
     }
     try {
-        speciesDataSL = await loadJSON("./species_sl.json");
+        speciesDataSL = await loadJSON("./species_sl_trad.json");
         jsonLoadedSL = true;
         console.log("✅ JSON SL caricato:", Object.keys(speciesDataSL).length, "specie");
     } catch (err) {
-        console.error("❌ Errore caricamento species_sl.json:", err);
+        console.error("❌ Errore caricamento species_sl_trad.json:", err);
     }
 }
 
